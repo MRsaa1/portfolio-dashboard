@@ -1,0 +1,725 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Light Theme Colors */
+    --bg-primary: #E5E4E2;
+    --bg-secondary: #FFFFFF;
+    --text-primary: #0D0D0D;
+    --text-secondary: #4A4A4A;
+    --accent: #CBA135;
+    --accent-hover: #B8912A;
+    --border: #D0D0D0;
+    --shadow: rgba(0, 0, 0, 0.1);
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark Theme */
+body.dark-theme {
+    --bg-primary: #0D0D0D;
+    --bg-secondary: #1A1A1A;
+    --text-primary: #E5E4E2;
+    --text-secondary: #B0B0B0;
+    --accent: #CBA135;
+    --accent-hover: #D4B045;
+    --border: #333333;
+    --shadow: rgba(0, 0, 0, 0.5);
+}
+
+/* Theme Switcher */
+.theme-switcher {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px var(--shadow);
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-switcher:hover {
+    background: rgba(255, 255, 255, 1);
+    transform: scale(1.1);
+}
+
+body.dark-theme .theme-switcher {
+    background: rgba(26, 26, 26, 0.9);
+    color: #E5E4E2;
+}
+
+body.dark-theme .theme-switcher:hover {
+    background: rgba(26, 26, 26, 1);
+}
+
+.theme-switcher svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.header {
+    background-color: var(--bg-secondary);
+    padding: 60px 0 40px;
+    text-align: center;
+    box-shadow: 0 2px 10px var(--shadow);
+    margin-bottom: 0;
+}
+
+/* Navigation Menu */
+.navigation {
+    background-color: var(--bg-secondary);
+    padding: 15px 0;
+    box-shadow: 0 2px 10px var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    margin-bottom: 40px;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-link {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 8px 16px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-link:hover {
+    color: var(--accent);
+    background-color: var(--bg-primary);
+}
+
+.nav-link:active,
+.nav-link.active {
+    color: var(--accent);
+    background-color: var(--bg-primary);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: var(--accent);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 80%;
+}
+
+.logo {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.tagline {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    font-weight: 300;
+}
+
+/* Main Content */
+.main-content {
+    padding: 20px 0 60px;
+}
+
+/* Section */
+.section {
+    margin-bottom: 60px;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 3px solid var(--accent);
+}
+
+/* Content Card */
+.content-card {
+    background-color: var(--bg-secondary);
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.content-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 30px var(--shadow);
+}
+
+/* Bio Section */
+.bio-content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.bio-text {
+    margin-bottom: 20px;
+    color: var(--text-secondary);
+}
+
+/* Publications Grid */
+.publications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.publication-item {
+    padding: 25px;
+    background-color: var(--bg-primary);
+    border-radius: 6px;
+    border-left: 4px solid var(--accent);
+    transition: transform 0.3s ease;
+}
+
+.publication-item:hover {
+    transform: translateX(5px);
+}
+
+.publication-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 10px;
+}
+
+.publication-authors {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: 5px;
+}
+
+.publication-date {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.publication-journals {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    font-style: italic;
+    margin-bottom: 15px;
+    line-height: 1.5;
+    padding-top: 8px;
+    border-top: 1px solid var(--border);
+}
+
+.publication-link {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.publication-link:hover {
+    color: var(--accent-hover);
+}
+
+/* PDF Grid */
+.pdf-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.pdf-item {
+    text-align: center;
+    padding: 30px 20px;
+    background-color: var(--bg-primary);
+    border-radius: 6px;
+    transition: transform 0.3s ease;
+}
+
+.pdf-item:hover {
+    transform: translateY(-5px);
+}
+
+.pdf-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.pdf-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 10px;
+}
+
+.pdf-description {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+}
+
+.pdf-download {
+    display: inline-block;
+    background-color: var(--accent);
+    color: var(--text-primary);
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.pdf-download:hover {
+    background-color: var(--accent-hover);
+}
+
+/* GitHub Grid */
+.github-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.github-item {
+    padding: 25px;
+    background-color: var(--bg-primary);
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.github-item:hover {
+    transform: translateY(-3px);
+    border-color: var(--accent);
+}
+
+.github-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.github-icon {
+    width: 24px;
+    height: 24px;
+    color: var(--text-primary);
+}
+
+.github-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.github-description {
+    color: var(--text-secondary);
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.github-meta {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+    align-items: center;
+}
+
+.github-language {
+    background-color: var(--bg-secondary);
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    color: var(--text-primary);
+}
+
+.github-stars {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.github-link {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.github-link:hover {
+    color: var(--accent-hover);
+}
+
+/* Resume Section */
+.resume-content {
+    max-width: 900px;
+}
+
+.resume-section {
+    margin-bottom: 40px;
+}
+
+.resume-subtitle {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--border);
+}
+
+.resume-item {
+    margin-bottom: 30px;
+    padding-left: 20px;
+    border-left: 3px solid var(--accent);
+}
+
+.resume-position {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 5px;
+}
+
+.resume-company {
+    font-size: 1rem;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.resume-period {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.resume-duties {
+    list-style: none;
+    padding-left: 0;
+}
+
+.resume-duties li {
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.resume-duties li:before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+}
+
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skill-tag {
+    background-color: var(--accent);
+    color: var(--text-primary);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.resume-download {
+    display: inline-block;
+    margin-top: 20px;
+    background-color: var(--accent);
+    color: var(--text-primary);
+    padding: 12px 24px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.resume-download:hover {
+    background-color: var(--accent-hover);
+}
+
+/* Contact Section */
+.contact-content {
+    max-width: 800px;
+}
+
+.contact-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.contact-item {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.contact-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+}
+
+.contact-details {
+    flex: 1;
+}
+
+.contact-label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+
+.contact-value {
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+    word-break: break-all;
+}
+
+.contact-value:hover {
+    color: var(--accent-hover);
+    text-decoration: underline;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--bg-secondary);
+    padding: 30px 0;
+    text-align: center;
+    box-shadow: 0 -2px 10px var(--shadow);
+    margin-top: 60px;
+}
+
+.footer-text {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* Scroll to Top Button */
+.scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 9998;
+    background-color: var(--accent);
+    color: var(--text-primary);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px var(--shadow);
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.scroll-to-top.visible {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.scroll-to-top:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px var(--shadow);
+}
+
+.scroll-to-top:active {
+    transform: translateY(-1px);
+}
+
+.scroll-to-top svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .logo {
+        font-size: 2rem;
+    }
+
+    .tagline {
+        font-size: 1rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .content-card {
+        padding: 25px;
+    }
+
+    .publications-grid,
+    .pdf-grid,
+    .github-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .github-title {
+        font-size: 1.1rem;
+    }
+
+    .github-description {
+        font-size: 0.9rem;
+    }
+
+    .github-item {
+        padding: 20px;
+    }
+
+    .theme-switcher {
+        top: 10px;
+        right: 10px;
+        width: 40px;
+        height: 40px;
+        padding: 8px;
+    }
+
+    .theme-switcher svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .nav-menu {
+        gap: 15px;
+    }
+
+    .nav-link {
+        font-size: 0.9rem;
+        padding: 6px 12px;
+    }
+
+    .scroll-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    .header {
+        padding: 40px 0 30px;
+    }
+
+    .content-card {
+        padding: 20px;
+    }
+
+    .contact-item {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav-menu {
+        gap: 10px;
+    }
+
+    .nav-link {
+        font-size: 0.85rem;
+        padding: 5px 10px;
+    }
+
+    .scroll-to-top {
+        bottom: 15px;
+        right: 15px;
+        width: 40px;
+        height: 40px;
+    }
+
+    .scroll-to-top svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .github-title {
+        font-size: 1rem;
+    }
+
+    .github-description {
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+
+    .github-item {
+        padding: 15px;
+    }
+
+    .github-header {
+        gap: 8px;
+        margin-bottom: 12px;
+    }
+
+    .github-icon {
+        width: 20px;
+        height: 20px;
+    }
+}
