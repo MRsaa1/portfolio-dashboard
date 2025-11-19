@@ -191,12 +191,24 @@ function switchLanguage(lang) {
     const currentLang = lang || (localStorage.getItem('language') || 'en');
     const t = translations[currentLang];
     
-    if (!t) return;
+    if (!t) {
+        console.error('Translation not found for language:', currentLang);
+        return;
+    }
+    
+    // Find all elements with data-lang attributes
+    const elements = document.querySelectorAll('[data-lang-en]');
+    console.log(`Found ${elements.length} elements with translations`);
     
     // Update all elements with data-lang attributes
-    document.querySelectorAll('[data-lang-en]').forEach(element => {
+    elements.forEach(element => {
         const key = element.getAttribute(`data-lang-${currentLang}`);
-        if (key) {
+        if (!key) {
+            console.warn('Translation key not found for element:', element);
+            return;
+        }
+        
+        try {
             if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
                 element.placeholder = key;
             } else if (element.tagName === 'BUTTON' || element.tagName === 'A') {
@@ -212,6 +224,9 @@ function switchLanguage(lang) {
                         const textMatch = innerHTML.match(/>([^<]+)</);
                         if (textMatch) {
                             element.innerHTML = innerHTML.replace(textMatch[1], key);
+                        } else {
+                            // Fallback: just replace text
+                            element.textContent = key;
                         }
                     }
                 } else {
@@ -235,6 +250,8 @@ function switchLanguage(lang) {
                 // For all other elements (h1-h6, etc.)
                 element.textContent = key;
             }
+        } catch (error) {
+            console.error('Error updating element:', element, error);
         }
     });
     
@@ -250,7 +267,7 @@ function switchLanguage(lang) {
 }
 
 // Initialize language on page load
-document.addEventListener('DOMContentLoaded', function() {
+function initLanguage() {
     const savedLang = localStorage.getItem('language') || 'en';
     switchLanguage(savedLang);
     
@@ -263,5 +280,13 @@ document.addEventListener('DOMContentLoaded', function() {
             switchLanguage(newLang);
         });
     }
-});
+}
+
+// Run on DOM ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initLanguage);
+} else {
+    // DOM already loaded
+    initLanguage();
+}
 
