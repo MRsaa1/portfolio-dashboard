@@ -220,8 +220,19 @@ function switchLanguage(lang) {
             } else if (element.tagName === 'STRONG' || element.tagName === 'EM') {
                 // For strong/em tags, update text but preserve structure
                 element.textContent = key;
+            } else if (element.tagName === 'P' || element.tagName === 'DIV') {
+                // For paragraphs and divs, check if they have nested elements
+                const hasNestedElements = element.querySelector('strong, em, a, span');
+                if (hasNestedElements && element.innerHTML.includes('<')) {
+                    // If has nested elements, replace innerHTML to preserve structure
+                    // The translation should include the HTML structure
+                    element.innerHTML = key;
+                } else {
+                    // No nested elements, safe to replace text
+                    element.textContent = key;
+                }
             } else {
-                // For all other elements (p, div, h1-h6, etc.)
+                // For all other elements (h1-h6, etc.)
                 element.textContent = key;
             }
         }
