@@ -1080,8 +1080,10 @@ html {
 }
 
 .contact-form {
-    max-width: 100%;
-    width: 100%;
+    max-width: 100% !important;
+    width: 100% !important;
+    display: flex;
+    flex-direction: column;
 }
 
 .form-group {
