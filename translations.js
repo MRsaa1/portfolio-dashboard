@@ -217,7 +217,11 @@ function switchLanguage(lang) {
                 } else {
                     element.textContent = key;
                 }
+            } else if (element.tagName === 'STRONG' || element.tagName === 'EM') {
+                // For strong/em tags, update text but preserve structure
+                element.textContent = key;
             } else {
+                // For all other elements (p, div, h1-h6, etc.)
                 element.textContent = key;
             }
         }
