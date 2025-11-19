@@ -198,7 +198,6 @@ function switchLanguage(lang) {
     
     // Find all elements with data-lang attributes
     const elements = document.querySelectorAll('[data-lang-en]');
-    console.log(`Found ${elements.length} elements with translations`);
     
     // Update all elements with data-lang attributes
     elements.forEach(element => {
