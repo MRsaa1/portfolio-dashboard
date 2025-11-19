@@ -93,6 +93,11 @@
     </script>
 </head>
 <body>
+    <!-- Language Switcher -->
+    <div class="language-switcher" id="languageSwitcher" title="Switch Language / Переключить язык">
+        <span class="lang-code" id="currentLang">EN</span>
+    </div>
+    
     <!-- Theme Switcher -->
     <div class="theme-switcher" id="themeSwitcher">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -111,8 +116,8 @@
     <!-- Header -->
     <header class="header">
         <div class="container">
-            <h1 class="logo">Oleksii Slieptsov</h1>
-            <p class="tagline">Treasury & Liquidity Expert | AI Automation | Ex-PrivatBank | SSRN Author</p>
+            <h1 class="logo" data-lang-en="Oleksii Slieptsov" data-lang-ru="Олексій Слієпцов">Oleksii Slieptsov</h1>
+            <p class="tagline" data-lang-en="Treasury & Liquidity Expert | AI Automation | Ex-PrivatBank | SSRN Author" data-lang-ru="Эксперт по казначейству и ликвидности | AI автоматизация | Бывший ПриватБанк | Автор SSRN">Treasury & Liquidity Expert | AI Automation | Ex-PrivatBank | SSRN Author</p>
       </div>
     </header>
 
@@ -120,13 +125,13 @@
     <nav class="navigation" id="navigation">
         <div class="container">
             <ul class="nav-menu">
-                <li><a href="#hero" class="nav-link">Home</a></li>
-                <li><a href="#bio" class="nav-link">About</a></li>
-                <li><a href="#ssrn" class="nav-link">Research</a></li>
-                <li><a href="#github" class="nav-link">Projects</a></li>
-                <li><a href="#certifications" class="nav-link">Certifications</a></li>
-                <li><a href="#resume" class="nav-link">CV</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="#hero" class="nav-link" id="navHome" data-lang-en="Home" data-lang-ru="Главная">Home</a></li>
+                <li><a href="#bio" class="nav-link" id="navAbout" data-lang-en="About" data-lang-ru="О себе">About</a></li>
+                <li><a href="#ssrn" class="nav-link" id="navResearch" data-lang-en="Research" data-lang-ru="Исследования">Research</a></li>
+                <li><a href="#github" class="nav-link" id="navProjects" data-lang-en="Projects" data-lang-ru="Проекты">Projects</a></li>
+                <li><a href="#certifications" class="nav-link" id="navCertifications" data-lang-en="Certifications" data-lang-ru="Сертификаты">Certifications</a></li>
+                <li><a href="#resume" class="nav-link" id="navCV" data-lang-en="CV" data-lang-ru="Резюме">CV</a></li>
+                <li><a href="#contact" class="nav-link" id="navContact" data-lang-en="Contact" data-lang-ru="Контакты">Contact</a></li>
             </ul>
         </div>
     </nav>
@@ -136,19 +141,19 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1 class="hero-title">Oleksii Slieptsov</h1>
-                    <p class="hero-subtitle">Treasury & Liquidity Expert</p>
-                    <p class="hero-tagline">AI Automation | SSRN Author | Ex-PrivatBank</p>
+                    <h1 class="hero-title" id="heroTitle" data-lang-en="Oleksii Slieptsov" data-lang-ru="Олексій Слієпцов">Oleksii Slieptsov</h1>
+                    <p class="hero-subtitle" id="heroSubtitle" data-lang-en="Treasury & Liquidity Expert" data-lang-ru="Эксперт по казначейству и ликвидности">Treasury & Liquidity Expert</p>
+                    <p class="hero-tagline" id="heroTagline" data-lang-en="AI Automation | SSRN Author | Ex-PrivatBank" data-lang-ru="AI автоматизация | Автор SSRN | Бывший ПриватБанк">AI Automation | SSRN Author | Ex-PrivatBank</p>
                     <div class="hero-buttons">
-                        <a href="#resume" class="hero-btn hero-btn-primary">View Resume</a>
-                        <a href="#ssrn" class="hero-btn hero-btn-secondary">Research</a>
+                        <a href="#resume" class="hero-btn hero-btn-primary" id="btnViewResume" data-lang-en="View Resume" data-lang-ru="Посмотреть резюме">View Resume</a>
+                        <a href="#ssrn" class="hero-btn hero-btn-secondary" id="btnResearch" data-lang-en="Research" data-lang-ru="Исследования">Research</a>
                         <a href="#resume" class="hero-btn hero-btn-download" id="downloadCVBtn">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                                 <polyline points="7 10 12 15 17 10"></polyline>
                                 <line x1="12" y1="15" x2="12" y2="3"></line>
                             </svg>
-                            Download CV
+                            <span id="btnDownloadCV" data-lang-en="Download CV" data-lang-ru="Скачать резюме">Download CV</span>
                         </a>
                     </div>
                 </div>
@@ -188,47 +193,47 @@
                 <div class="impact-item">
                     <div class="impact-icon">📊</div>
                     <div class="impact-value">700+</div>
-                    <div class="impact-label">SSRN Views</div>
+                    <div class="impact-label" data-lang-en="SSRN Views" data-lang-ru="Просмотров SSRN">SSRN Views</div>
                 </div>
                 <div class="impact-item">
                     <div class="impact-icon">📥</div>
                     <div class="impact-value">150+</div>
-                    <div class="impact-label">Downloads</div>
+                    <div class="impact-label" data-lang-en="Downloads" data-lang-ru="Скачиваний">Downloads</div>
                 </div>
                 <div class="impact-item">
                     <div class="impact-icon">🔬</div>
                     <div class="impact-value">3</div>
-                    <div class="impact-label">Research Fields</div>
+                    <div class="impact-label" data-lang-en="Research Fields" data-lang-ru="Областей исследований">Research Fields</div>
                 </div>
                 <div class="impact-item">
                     <div class="impact-icon">💻</div>
                     <div class="impact-value">20+</div>
-                    <div class="impact-label">GitHub Projects</div>
+                    <div class="impact-label" data-lang-en="GitHub Projects" data-lang-ru="Проектов GitHub">GitHub Projects</div>
                 </div>
                 <div class="impact-item">
                     <div class="impact-icon">⏱️</div>
                     <div class="impact-value">19</div>
-                    <div class="impact-label">Years Experience</div>
+                    <div class="impact-label" data-lang-en="Years Experience" data-lang-ru="Лет опыта">Years Experience</div>
                 </div>
                 <div class="impact-item">
                     <div class="impact-icon">👥</div>
                     <div class="impact-value">64</div>
-                    <div class="impact-label">Team Managed</div>
+                    <div class="impact-label" data-lang-en="Team Managed" data-lang-ru="Человек в команде">Team Managed</div>
                 </div>
                 <div class="impact-item">
                     <div class="impact-icon">📄</div>
                     <div class="impact-value">11</div>
-                    <div class="impact-label">Publications</div>
+                    <div class="impact-label" data-lang-en="Publications" data-lang-ru="Публикаций">Publications</div>
                 </div>
                 <div class="impact-item">
                     <div class="impact-icon">⭐</div>
                     <div class="impact-value">20+</div>
-                    <div class="impact-label">GitHub Stars</div>
+                    <div class="impact-label" data-lang-en="GitHub Stars" data-lang-ru="Звезд GitHub">GitHub Stars</div>
                 </div>
                 <div class="impact-item">
                     <div class="impact-icon">💰</div>
                     <div class="impact-value">$50M</div>
-                    <div class="impact-label">Daily Turnover</div>
+                    <div class="impact-label" data-lang-en="Daily Turnover" data-lang-ru="Ежедневный оборот">Daily Turnover</div>
                 </div>
             </div>
         </div>
@@ -239,7 +244,7 @@
         <div class="container">
             <!-- Short Bio Section -->
             <section class="section" id="bio">
-                <h2 class="section-title">About</h2>
+                <h2 class="section-title" id="sectionAbout" data-lang-en="About" data-lang-ru="О себе">About</h2>
                 <div class="content-card">
                     <div class="bio-content">
                         <p class="bio-text">
@@ -260,7 +265,7 @@
 
             <!-- Certifications Section -->
             <section class="section" id="certifications">
-                <h2 class="section-title">Professional Certifications</h2>
+                <h2 class="section-title" id="sectionCertifications" data-lang-en="Professional Certifications" data-lang-ru="Профессиональные сертификаты">Professional Certifications</h2>
                 <div class="content-card">
                     <div class="certifications-grid">
                         <div class="certification-card">
@@ -309,7 +314,7 @@
 
             <!-- Tech Stack Section -->
             <section class="section" id="tech-stack">
-                <h2 class="section-title">Technology Stack</h2>
+                <h2 class="section-title" id="sectionTechStack" data-lang-en="Technology Stack" data-lang-ru="Технологический стек">Technology Stack</h2>
                 <div class="content-card">
                     <div class="tech-categories">
                         <div class="tech-category">
@@ -418,7 +423,7 @@
 
             <!-- SSRN Publications Section -->
             <section class="section" id="ssrn">
-                <h2 class="section-title">SSRN Publications</h2>
+                <h2 class="section-title" id="sectionResearch" data-lang-en="SSRN Publications" data-lang-ru="Публикации SSRN">SSRN Publications</h2>
                 <div class="content-card">
                     <div class="publications-grid">
                         <div class="publication-item" itemscope itemtype="https://schema.org/ScholarlyArticle">
@@ -675,7 +680,7 @@
 
             <!-- GitHub Projects Section -->
             <section class="section" id="github">
-                <h2 class="section-title">GitHub Projects</h2>
+                <h2 class="section-title" id="sectionProjects" data-lang-en="GitHub Projects" data-lang-ru="Проекты GitHub">GitHub Projects</h2>
                 <div class="content-card">
                     <div class="github-grid">
                         <div class="github-item">
@@ -909,7 +914,7 @@
 
             <!-- Resume Section -->
             <section class="section" id="resume">
-                <h2 class="section-title">Resume</h2>
+                <h2 class="section-title" id="sectionResume" data-lang-en="Resume" data-lang-ru="Резюме">Resume</h2>
                 <div class="content-card">
                     <div class="resume-content">
                         <div class="resume-section">
@@ -1053,7 +1058,7 @@
 
             <!-- Timeline Section -->
             <section class="section" id="timeline">
-                <h2 class="section-title">Career Timeline</h2>
+                <h2 class="section-title" id="sectionTimeline" data-lang-en="Career Timeline" data-lang-ru="Карьерная хронология">Career Timeline</h2>
                 <div class="content-card">
                     <div class="timeline">
                         <div class="timeline-item">
@@ -1110,7 +1115,7 @@
 
             <!-- Awards & Honors Section -->
             <section class="section" id="awards">
-                <h2 class="section-title">Awards & Honors</h2>
+                <h2 class="section-title" id="sectionAwards" data-lang-en="Awards & Honors" data-lang-ru="Награды и достижения">Awards & Honors</h2>
                 <div class="content-card">
                     <div class="awards-grid">
                         <div class="award-card">
@@ -1170,12 +1175,12 @@
                             <p class="award-description">For successful performance of functions regarding the storage of cash reserves of the National Bank of Ukraine. Order dated 14 May 2019 No. 1515-k</p>
                         </div>
                     </div>
-                </div>
-            </section>
+    </div>
+    </section>
 
             <!-- Contact Section -->
             <section class="section" id="contact">
-                <h2 class="section-title">Contact</h2>
+                <h2 class="section-title" id="sectionContact" data-lang-en="Contact" data-lang-ru="Контакты">Contact</h2>
                 <div class="content-card">
                     <div class="contact-content">
                         <div class="contact-info">
@@ -1230,25 +1235,25 @@
                             </div>
                         </div>
                         <div class="contact-form-container">
-                            <h3 class="contact-form-title">Send a Message</h3>
+                            <h3 class="contact-form-title" id="formTitle" data-lang-en="Send a Message" data-lang-ru="Отправить сообщение">Send a Message</h3>
                             <form class="contact-form" id="contactForm">
                                 <div class="form-group">
-                                    <label for="name" class="form-label">Name</label>
+                                    <label for="name" class="form-label" id="formName" data-lang-en="Name" data-lang-ru="Имя">Name</label>
                                     <input type="text" id="name" name="name" class="form-input" required>
                                 </div>
                                 <div class="form-group">
-                                    <label for="email" class="form-label">Email</label>
+                                    <label for="email" class="form-label" id="formEmailLabel" data-lang-en="Email" data-lang-ru="Email">Email</label>
                                     <input type="email" id="email" name="email" class="form-input" required>
                                 </div>
                                 <div class="form-group">
-                                    <label for="subject" class="form-label">Subject</label>
+                                    <label for="subject" class="form-label" id="formSubject" data-lang-en="Subject" data-lang-ru="Тема">Subject</label>
                                     <input type="text" id="subject" name="subject" class="form-input" required>
                                 </div>
                                 <div class="form-group">
-                                    <label for="message" class="form-label">Message</label>
+                                    <label for="message" class="form-label" id="formMessageLabel" data-lang-en="Message" data-lang-ru="Сообщение">Message</label>
                                     <textarea id="message" name="message" class="form-textarea" rows="5" required></textarea>
                                 </div>
-                                <button type="submit" class="form-submit">Send Message</button>
+                                <button type="submit" class="form-submit" id="formSend" data-lang-en="Send Message" data-lang-ru="Отправить сообщение">Send Message</button>
                                 <div class="form-message" id="formMessage"></div>
                             </form>
       </div>
@@ -1282,6 +1287,7 @@
     </div>
   </footer>
 
+    <script src="translations.js"></script>
     <script src="script.js"></script>
     
     <!-- Google Analytics (only for production, not for local files) -->

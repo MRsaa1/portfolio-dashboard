@@ -37,6 +37,90 @@ body.dark-theme {
     --shadow: rgba(0, 0, 0, 0.5);
 }
 
+/* Language Switcher */
+.language-switcher {
+    position: fixed;
+    top: 20px;
+    right: 80px;
+    z-index: 9999;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px 16px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px var(--shadow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    border: 2px solid var(--border);
+}
+
+.language-switcher:hover {
+    background: rgba(255, 255, 255, 1);
+    transform: scale(1.05);
+    border-color: var(--accent);
+}
+
+body.dark-theme .language-switcher {
+    background: rgba(26, 26, 26, 0.9);
+    color: #E5E4E2;
+    border-color: var(--border);
+}
+
+body.dark-theme .language-switcher:hover {
+    background: rgba(26, 26, 26, 1);
+    border-color: var(--accent);
+}
+
+.language-switcher .lang-code {
+    user-select: none;
+}
+
+/* Language Switcher */
+.language-switcher {
+    position: fixed;
+    top: 20px;
+    right: 80px;
+    z-index: 9999;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px 16px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px var(--shadow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    border: 2px solid var(--border);
+}
+
+.language-switcher:hover {
+    background: rgba(255, 255, 255, 1);
+    transform: scale(1.05);
+    border-color: var(--accent);
+}
+
+body.dark-theme .language-switcher {
+    background: rgba(26, 26, 26, 0.9);
+    color: #E5E4E2;
+    border-color: var(--border);
+}
+
+body.dark-theme .language-switcher:hover {
+    background: rgba(26, 26, 26, 1);
+    border-color: var(--accent);
+}
+
+.language-switcher .lang-code {
+    user-select: none;
+}
+
 /* Theme Switcher */
 .theme-switcher {
     position: fixed;
@@ -73,6 +157,23 @@ body.dark-theme .theme-switcher:hover {
 .theme-switcher svg {
     width: 24px;
     height: 24px;
+}
+
+/* Responsive adjustments for language switcher */
+@media (max-width: 768px) {
+    .language-switcher {
+        top: 10px;
+        right: 70px;
+        padding: 8px 12px;
+        font-size: 0.8rem;
+    }
+    
+    .theme-switcher {
+        top: 10px;
+        right: 10px;
+        width: 40px;
+        height: 40px;
+    }
 }
 
 /* Container */
