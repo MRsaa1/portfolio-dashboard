@@ -198,8 +198,10 @@ function switchLanguage(lang) {
     
     // Find all elements with data-lang attributes
     const elements = document.querySelectorAll('[data-lang-en]');
+    console.log(`🌐 Switching to ${currentLang.toUpperCase()}, found ${elements.length} translatable elements`);
     
     // Update all elements with data-lang attributes
+    let updatedCount = 0;
     elements.forEach(element => {
         const key = element.getAttribute(`data-lang-${currentLang}`);
         if (!key) {
@@ -252,7 +254,10 @@ function switchLanguage(lang) {
         } catch (error) {
             console.error('Error updating element:', element, error);
         }
+        updatedCount++;
     });
+    
+    console.log(`✅ Updated ${updatedCount} elements`);
     
     // Update language indicator
     const langIndicator = document.getElementById('currentLang');
