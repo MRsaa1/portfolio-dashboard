@@ -202,12 +202,14 @@ function switchLanguage(lang) {
     
     // Update all elements with data-lang attributes
     let updatedCount = 0;
-    elements.forEach(element => {
+    elements.forEach((element, index) => {
         const key = element.getAttribute(`data-lang-${currentLang}`);
         if (!key) {
             console.warn('Translation key not found for element:', element);
             return;
         }
+        
+        const oldText = element.textContent || element.innerText;
         
         try {
             if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
@@ -250,6 +252,11 @@ function switchLanguage(lang) {
             } else {
                 // For all other elements (h1-h6, etc.)
                 element.textContent = key;
+            }
+            
+            // Debug: log first few updates
+            if (index < 5) {
+                console.log(`  [${index}] ${element.tagName}.${element.className}: "${oldText.substring(0, 30)}" → "${key.substring(0, 30)}"`);
             }
         } catch (error) {
             console.error('Error updating element:', element, error);
