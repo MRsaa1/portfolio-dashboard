@@ -105,5 +105,115 @@ document.addEventListener('DOMContentLoaded', function() {
     
     window.addEventListener('scroll', updateActiveNavLink);
     updateActiveNavLink(); // Initial call
+    
+    // Download CV Button
+    const downloadCVBtn = document.getElementById('downloadCVBtn');
+    if (downloadCVBtn) {
+        downloadCVBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            // Try to download CV from resume section or create print version
+            const resumeSection = document.getElementById('resume');
+            if (resumeSection) {
+                // Create a new window with printable resume
+                const printWindow = window.open('', '_blank');
+                printWindow.document.write(`
+                    <!DOCTYPE html>
+                    <html>
+                    <head>
+                        <title>Oleksii Slieptsov - Resume</title>
+                        <style>
+                            body { font-family: Arial, sans-serif; padding: 40px; line-height: 1.6; }
+                            h1, h2, h3 { color: #333; }
+                            .resume-section { margin-bottom: 30px; }
+                            .resume-item { margin-bottom: 20px; }
+                            @media print { body { padding: 20px; } }
+                        </style>
+                    </head>
+                    <body>
+                        ${resumeSection.innerHTML}
+                    </body>
+                    </html>
+                `);
+                printWindow.document.close();
+                printWindow.print();
+            } else {
+                // Fallback: scroll to resume section
+                document.getElementById('resume')?.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    }
+    
+    // Contact Form Handler
+    const contactForm = document.getElementById('contactForm');
+    const formMessage = document.getElementById('formMessage');
+    
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                subject: document.getElementById('subject').value,
+                message: document.getElementById('message').value
+            };
+            
+            // Simple validation
+            if (!formData.name || !formData.email || !formData.message) {
+                showFormMessage('Please fill in all required fields.', 'error');
+                return;
+            }
+            
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(formData.email)) {
+                showFormMessage('Please enter a valid email address.', 'error');
+                return;
+            }
+            
+            // Create mailto link (fallback if no backend)
+            const mailtoLink = `mailto:your-email@example.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`)}`;
+            
+            // For production, you would send this to a backend API
+            // For now, we'll use mailto as fallback
+            window.location.href = mailtoLink;
+            
+            // Show success message
+            showFormMessage('Thank you! Your message has been sent. I will get back to you soon.', 'success');
+            
+            // Reset form
+            contactForm.reset();
+        });
+    }
+    
+    function showFormMessage(message, type) {
+        if (formMessage) {
+            formMessage.textContent = message;
+            formMessage.className = `form-message ${type}`;
+            formMessage.style.display = 'block';
+            
+            // Hide message after 5 seconds
+            setTimeout(() => {
+                formMessage.style.display = 'none';
+            }, 5000);
+        }
+    }
+    
+    // Enhanced scroll animations for timeline
+    const timelineItems = document.querySelectorAll('.timeline-item');
+    const timelineObserver = new IntersectionObserver(function(entries) {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateX(0)';
+                }, index * 100);
+            }
+        });
+    }, { threshold: 0.2 });
+    
+    timelineItems.forEach(item => {
+        timelineObserver.observe(item);
+    });
 });
 
