@@ -18,7 +18,12 @@
 4. Выберите **"Link"**
 5. Вставьте URL: `https://mrsaa1.github.io/portfolio-dashboard/`
 6. Добавьте заголовок: `Portfolio & Research Dashboard`
-7. Добавьте описание (опционально): `Professional portfolio showcasing research publications, GitHub projects, and professional experience`
+7. **Добавьте описание** (LinkedIn просит это поле):
+   - См. файл `LINKEDIN_DESCRIPTION.md` для готовых вариантов
+   - **Рекомендуемый вариант:**
+     ```
+     Professional portfolio showcasing SSRN research publications, GitHub projects (AI Trader, Global Risk Intelligence Platform, MindBalance), and 19+ years of banking experience in treasury operations, liquidity management, and AI automation.
+     ```
 8. Нажмите **"Save"**
 
 **Результат:** Дашборд будет отображаться в верхней части профиля с превью.
