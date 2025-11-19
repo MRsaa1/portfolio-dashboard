@@ -33,7 +33,7 @@
     <meta name="twitter:image" content="https://mrsaa1.github.io/portfolio-dashboard/img/preview.png">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg">
     
     <!-- Performance: Preload critical resources -->
     <link rel="preload" href="styles.css" as="style">
@@ -1147,8 +1147,8 @@
                             <p class="award-description">Problems of Socio-Economic Development of Ukrainian Regions</p>
                         </div>
                     </div>
-                </div>
-            </section>
+    </div>
+    </section>
 
             <!-- Contact Section -->
             <section class="section" id="contact">
@@ -1228,9 +1228,9 @@
                                 <button type="submit" class="form-submit">Send Message</button>
                                 <div class="form-message" id="formMessage"></div>
                             </form>
-                        </div>
-                    </div>
-                </div>
+      </div>
+    </div>
+  </div>
             </section>
 
             <!-- Disclosure Section -->
@@ -1261,24 +1261,28 @@
 
     <script src="script.js"></script>
     
-    <!-- Google Analytics (replace with your tracking ID) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <!-- Google Analytics (only for production, not for local files) -->
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-XXXXXXXXXX'); // Replace with your Google Analytics ID
+        // Only load Google Analytics if not running from file:// protocol
+        if (window.location.protocol !== 'file:') {
+            // Replace G-XXXXXXXXXX with your actual Google Analytics ID
+            const gaId = 'G-XXXXXXXXXX'; // TODO: Replace with your Google Analytics ID
+            
+            // Only load if ID is set (not placeholder)
+            if (gaId && gaId !== 'G-XXXXXXXXXX') {
+                (function() {
+                    var script = document.createElement('script');
+                    script.async = true;
+                    script.src = 'https://www.googletagmanager.com/gtag/js?id=' + gaId;
+                    document.head.appendChild(script);
+                    
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
+                    gtag('js', new Date());
+                    gtag('config', gaId);
+                })();
+            }
+        }
     </script>
-    
-    <!-- Alternative: Google Analytics 4 (GA4) -->
-    <!-- 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-XXXXXXXXXX');
-    </script>
-    -->
 </body>
 </html>
