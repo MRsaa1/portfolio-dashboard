@@ -122,7 +122,23 @@
                 font-size: 1.5rem;
             }
         }
+        #issue-proof-pdf {
+            min-height: 600px;
+        }
+        @media (max-width: 768px) {
+            #issue-proof-pdf {
+                height: 500px;
+            }
+        }
     </style>
+    <script>
+        // PDF is already loaded in iframe, no need to check
+        // The iframe will display the PDF automatically if it exists
+        window.addEventListener('DOMContentLoaded', function() {
+            // PDF is already set in iframe src, browser will handle it
+            console.log('Article page loaded. PDF should display automatically if available.');
+        });
+    </script>
 </head>
 <body>
     <div class="article-page">
@@ -187,21 +203,34 @@
                 </div>
             </div>
 
+            <!-- Journal Publications Section -->
             <div class="screenshot-section">
-                <h3 style="color: var(--text-primary); margin-bottom: 15px;">SSRN Issue Proof Page Screenshot</h3>
-                <div class="screenshot-placeholder">
-                    <p><strong>📸 Screenshot Placeholder</strong></p>
-                    <p style="margin-top: 10px; font-size: 0.9rem;">
-                        To add the screenshot:<br>
-                        1. Save the screenshot from SSRN Issue Proof page<br>
-                        2. Name it: <code>ssrn-5389179-issue-proof.png</code><br>
-                        3. Place it in: <code>screenshots/</code> folder<br>
-                        4. Update this page to reference: <code>../screenshots/ssrn-5389179-issue-proof.png</code>
+                <h3 style="color: var(--text-primary); margin-bottom: 20px;">Journal Publications & Issue Proof Pages</h3>
+                
+                <!-- Journal 1: POLITICAL ECONOMY -->
+                <div style="background: var(--bg-primary); padding: 20px; border-radius: 6px; margin-bottom: 20px; border-left: 4px solid var(--accent);">
+                    <h4 style="color: var(--text-primary); margin-bottom: 15px; font-size: 1.1rem;">1. POLITICAL ECONOMY - DEVELOPMENT: FISCAL & MONETARY POLICY eJOURNAL</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 15px;">
+                        Vol. 13, No. 75 | September 8, 2025 | Journal ID: 2242108
                     </p>
-                    <p style="margin-top: 15px; font-size: 0.85rem; color: var(--text-secondary);">
-                        <strong>Current Issue Proof URL (private):</strong><br>
-                        <code style="font-size: 0.8rem; word-break: break-all;">https://hq.ssrn.com/journals/IssueProof.cfm?abstractid=5389179&journalid=2242108&issue_number=75&volume=13&journal_type=CMBO&function=showissue</code>
-                    </p>
+                    <div id="pdf-container-1">
+                        <iframe id="issue-proof-pdf-1" 
+                                src="../screenshots/ssrn-5389179-issue-proof.pdf" 
+                                style="width: 100%; height: 800px; border: 1px solid var(--border); border-radius: 6px; display: block;"
+                                type="application/pdf">
+                        </iframe>
+                    </div>
+                    <div style="margin-top: 15px; padding: 15px; background: var(--bg-secondary); border-radius: 6px;">
+                        <p style="margin: 0; font-size: 0.85rem; color: var(--text-secondary);">
+                            <strong>Issue Proof URL (private):</strong><br>
+                            <code style="font-size: 0.8rem; word-break: break-all; display: block; margin-top: 5px; padding: 10px; background: var(--bg-primary); border-radius: 4px;">https://hq.ssrn.com/journals/IssueProof.cfm?abstractid=5389179&journalid=2242108&issue_number=75&volume=13&journal_type=CMBO&function=showissue</code>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Placeholder for additional journals -->
+                <div id="additional-journals" style="display: none;">
+                    <!-- Additional journals will be added here -->
                 </div>
             </div>
 
