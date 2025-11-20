@@ -534,10 +534,45 @@ html {
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
+    display: inline-block;
 }
 
 .publication-link:hover {
     color: var(--accent-hover);
+    text-decoration: underline;
+}
+
+.publication-links {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+
+.publication-stats {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-top: 8px;
+    font-weight: 500;
+}
+
+.publication-note {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: var(--bg-primary);
+    border-radius: 8px;
+    border-left: 4px solid var(--accent);
+}
+
+.publication-note p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.publication-note strong {
+    color: var(--text-primary);
 }
 
 /* PDF Grid */
