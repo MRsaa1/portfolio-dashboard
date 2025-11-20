@@ -134,22 +134,30 @@
     <script>
         // Set correct PDF path based on environment
         window.addEventListener('DOMContentLoaded', function() {
-            const pdfIframe = document.getElementById('issue-proof-pdf-1');
-            if (pdfIframe) {
+            const pdfViewLink = document.getElementById('pdf-view-link');
+            const pdfDownloadLink = document.getElementById('pdf-download-link');
+            
+            if (pdfViewLink && pdfDownloadLink) {
                 // Check if we're on GitHub Pages or server
                 const isGitHubPages = window.location.hostname.includes('github.io');
                 const isServer = window.location.hostname.includes('104.248.70.69') || window.location.hostname.includes('saa-alliance.com');
                 
+                let pdfPath;
+                
                 if (isGitHubPages) {
                     // GitHub Pages: use absolute path
-                    pdfIframe.src = '/portfolio-dashboard/screenshots/ssrn-5389179-issue-proof.pdf';
+                    pdfPath = '/portfolio-dashboard/screenshots/ssrn-5389179-issue-proof.pdf';
                 } else if (isServer) {
-                    // Server: use relative path
-                    pdfIframe.src = '../screenshots/ssrn-5389179-issue-proof.pdf';
+                    // Server: use absolute path from research
+                    pdfPath = '/research/screenshots/ssrn-5389179-issue-proof.pdf';
                 } else {
                     // Local: use relative path
-                    pdfIframe.src = '../screenshots/ssrn-5389179-issue-proof.pdf';
+                    pdfPath = '../screenshots/ssrn-5389179-issue-proof.pdf';
                 }
+                
+                // Set links
+                pdfViewLink.href = pdfPath;
+                pdfDownloadLink.href = pdfPath;
             }
         });
     </script>
@@ -227,12 +235,32 @@
                     <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 15px;">
                         Vol. 13, No. 75 | September 8, 2025 | Journal ID: 2242108
                     </p>
-                    <div id="pdf-container-1">
-                        <iframe id="issue-proof-pdf-1" 
-                                src="../screenshots/ssrn-5389179-issue-proof.pdf" 
-                                style="width: 100%; height: 800px; border: 1px solid var(--border); border-radius: 6px; display: block;"
-                                type="application/pdf">
-                        </iframe>
+                    <div id="pdf-container-1" style="text-align: center; padding: 40px 20px; background: var(--bg-secondary); border-radius: 6px;">
+                        <div style="margin-bottom: 20px;">
+                            <h4 style="color: var(--text-primary); margin-bottom: 15px;">SSRN Issue Proof Page (PDF)</h4>
+                            <p style="color: var(--text-secondary); margin-bottom: 20px;">
+                                Click the button below to view or download the PDF version of the Issue Proof page.
+                            </p>
+                        </div>
+                        <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                            <a id="pdf-view-link" 
+                               href="#" 
+                               target="_blank" 
+                               style="display: inline-block; padding: 12px 24px; background: var(--accent); color: white; border-radius: 6px; text-decoration: none; font-weight: 500; transition: background 0.3s ease;">
+                                📄 View PDF →
+                            </a>
+                            <a id="pdf-download-link" 
+                               href="#" 
+                               download="ssrn-5389179-issue-proof.pdf"
+                               style="display: inline-block; padding: 12px 24px; background: var(--bg-primary); color: var(--accent); border: 2px solid var(--accent); border-radius: 6px; text-decoration: none; font-weight: 500; transition: all 0.3s ease;">
+                                ⬇️ Download PDF →
+                            </a>
+                        </div>
+                        <div style="margin-top: 20px; padding: 15px; background: var(--bg-primary); border-radius: 6px;">
+                            <p style="margin: 0; font-size: 0.85rem; color: var(--text-secondary);">
+                                <strong>Note:</strong> The PDF file contains the complete Issue Proof page from SSRN, showing the article's publication in the journal.
+                            </p>
+                        </div>
                     </div>
                     <div style="margin-top: 15px; padding: 15px; background: var(--bg-secondary); border-radius: 6px;">
                         <p style="margin: 0; font-size: 0.85rem; color: var(--text-secondary);">
