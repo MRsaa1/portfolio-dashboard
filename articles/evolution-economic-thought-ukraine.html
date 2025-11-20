@@ -132,11 +132,25 @@
         }
     </style>
     <script>
-        // PDF is already loaded in iframe, no need to check
-        // The iframe will display the PDF automatically if it exists
+        // Set correct PDF path based on environment
         window.addEventListener('DOMContentLoaded', function() {
-            // PDF is already set in iframe src, browser will handle it
-            console.log('Article page loaded. PDF should display automatically if available.');
+            const pdfIframe = document.getElementById('issue-proof-pdf-1');
+            if (pdfIframe) {
+                // Check if we're on GitHub Pages or server
+                const isGitHubPages = window.location.hostname.includes('github.io');
+                const isServer = window.location.hostname.includes('104.248.70.69') || window.location.hostname.includes('saa-alliance.com');
+                
+                if (isGitHubPages) {
+                    // GitHub Pages: use absolute path
+                    pdfIframe.src = '/portfolio-dashboard/screenshots/ssrn-5389179-issue-proof.pdf';
+                } else if (isServer) {
+                    // Server: use relative path
+                    pdfIframe.src = '../screenshots/ssrn-5389179-issue-proof.pdf';
+                } else {
+                    // Local: use relative path
+                    pdfIframe.src = '../screenshots/ssrn-5389179-issue-proof.pdf';
+                }
+            }
         });
     </script>
 </head>
@@ -215,7 +229,7 @@
                     </p>
                     <div id="pdf-container-1">
                         <iframe id="issue-proof-pdf-1" 
-                                src="/portfolio-dashboard/screenshots/ssrn-5389179-issue-proof.pdf" 
+                                src="../screenshots/ssrn-5389179-issue-proof.pdf" 
                                 style="width: 100%; height: 800px; border: 1px solid var(--border); border-radius: 6px; display: block;"
                                 type="application/pdf">
                         </iframe>
