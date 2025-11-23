@@ -218,28 +218,49 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Accordion functionality for Published Articles
     const accordionHeaders = document.querySelectorAll('.accordion-header');
+    
+    // Initialize all accordions as closed
+    accordionHeaders.forEach(header => {
+        const content = header.nextElementSibling;
+        if (content && header.getAttribute('aria-expanded') === 'false') {
+            content.style.maxHeight = '0';
+            content.style.padding = '0 25px';
+            content.style.opacity = '0';
+        }
+    });
+    
     accordionHeaders.forEach(header => {
         header.addEventListener('click', function() {
             const isExpanded = this.getAttribute('aria-expanded') === 'true';
             const content = this.nextElementSibling;
             
-            // Close all other accordions (optional - remove if you want multiple open)
+            if (!content) return;
+            
+            // Close all other accordions
             accordionHeaders.forEach(otherHeader => {
                 if (otherHeader !== this) {
+                    const otherContent = otherHeader.nextElementSibling;
                     otherHeader.setAttribute('aria-expanded', 'false');
-                    otherHeader.nextElementSibling.style.maxHeight = '0';
-                    otherHeader.nextElementSibling.style.padding = '0 25px';
+                    if (otherContent) {
+                        otherContent.style.maxHeight = '0';
+                        otherContent.style.padding = '0 25px';
+                        otherContent.style.opacity = '0';
+                    }
                 }
             });
             
             // Toggle current accordion
             this.setAttribute('aria-expanded', !isExpanded);
             if (!isExpanded) {
+                // Open
                 content.style.maxHeight = content.scrollHeight + 'px';
                 content.style.padding = '0 25px 25px 25px';
+                content.style.opacity = '1';
             } else {
+                // Close
                 content.style.maxHeight = '0';
                 content.style.padding = '0 25px';
+                content.style.opacity = '0';
             }
         });
     });
