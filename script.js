@@ -215,5 +215,33 @@ document.addEventListener('DOMContentLoaded', function() {
     timelineItems.forEach(item => {
         timelineObserver.observe(item);
     });
+    
+    // Accordion functionality for Published Articles
+    const accordionHeaders = document.querySelectorAll('.accordion-header');
+    accordionHeaders.forEach(header => {
+        header.addEventListener('click', function() {
+            const isExpanded = this.getAttribute('aria-expanded') === 'true';
+            const content = this.nextElementSibling;
+            
+            // Close all other accordions (optional - remove if you want multiple open)
+            accordionHeaders.forEach(otherHeader => {
+                if (otherHeader !== this) {
+                    otherHeader.setAttribute('aria-expanded', 'false');
+                    otherHeader.nextElementSibling.style.maxHeight = '0';
+                    otherHeader.nextElementSibling.style.padding = '0 25px';
+                }
+            });
+            
+            // Toggle current accordion
+            this.setAttribute('aria-expanded', !isExpanded);
+            if (!isExpanded) {
+                content.style.maxHeight = content.scrollHeight + 'px';
+                content.style.padding = '0 25px 25px 25px';
+            } else {
+                content.style.maxHeight = '0';
+                content.style.padding = '0 25px';
+            }
+        });
+    });
 });
 
