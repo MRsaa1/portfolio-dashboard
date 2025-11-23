@@ -3,6 +3,7 @@ const translations = {
     en: {
         // Navigation
         navHome: "Home",
+        navSAA: "SAA Platform",
         navAbout: "About",
         navResearch: "Research",
         navProjects: "Projects",
@@ -14,6 +15,7 @@ const translations = {
         heroTitle: "Oleksii Slieptsov",
         heroSubtitle: "Treasury & Liquidity Expert",
         heroTagline: "AI Automation | SSRN Author | Ex-PrivatBank",
+        btnSAA: "SCIENTIFIC ANALYTICS ALLIANCE",
         btnViewResume: "View Resume",
         btnResearch: "Research",
         btnDownloadCV: "Download CV",
@@ -95,6 +97,7 @@ const translations = {
     ru: {
         // Navigation
         navHome: "Главная",
+        navSAA: "Платформа SAA",
         navAbout: "О себе",
         navResearch: "Исследования",
         navProjects: "Проекты",
@@ -106,6 +109,7 @@ const translations = {
         heroTitle: "Олексій Слієпцов",
         heroSubtitle: "Эксперт по казначейству и ликвидности",
         heroTagline: "AI автоматизация | Автор SSRN | Бывший ПриватБанк",
+        btnSAA: "SCIENTIFIC ANALYTICS ALLIANCE",
         btnViewResume: "Посмотреть резюме",
         btnResearch: "Исследования",
         btnDownloadCV: "Скачать резюме",

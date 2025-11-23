@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCIENTIFIC ANALYTICS ALLIANCE - Premium Research & Wealth Intelligence | Oleksii Slieptsov</title>
+    <meta name="description" content="SCIENTIFIC ANALYTICS ALLIANCE (SAA) - Institutional-grade financial technology and research platform combining advanced quantitative analytics, AI, and academic research.">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .platform-page {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        .platform-header {
+            background: linear-gradient(135deg, var(--accent) 0%, #8B6F47 100%);
+            padding: 60px 40px;
+            border-radius: 12px;
+            margin-bottom: 40px;
+            color: white;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        .platform-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .platform-subtitle {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            margin-bottom: 20px;
+        }
+        .platform-meta {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+            font-size: 0.95rem;
+        }
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .platform-content {
+            background: var(--bg-primary);
+            padding: 50px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px var(--shadow);
+            line-height: 1.8;
+        }
+        .section-block {
+            margin-bottom: 50px;
+        }
+        .section-block h2 {
+            font-size: 2rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--accent);
+        }
+        .section-block h3 {
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        .section-block p {
+            color: var(--text-secondary);
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+        }
+        .section-block ul, .section-block ol {
+            color: var(--text-secondary);
+            margin-left: 30px;
+            margin-bottom: 20px;
+        }
+        .section-block li {
+            margin-bottom: 10px;
+            font-size: 1.05rem;
+        }
+        .highlight-box {
+            background: var(--bg-secondary);
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent);
+            margin: 25px 0;
+        }
+        .highlight-box strong {
+            color: var(--accent);
+            font-size: 1.1rem;
+        }
+        .platform-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+        .platform-card {
+            background: var(--bg-secondary);
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .platform-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px var(--shadow);
+        }
+        .platform-card h4 {
+            color: var(--accent);
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+        }
+        .platform-card p {
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 30px;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+            padding: 10px 20px;
+            background: var(--bg-secondary);
+            border-radius: 6px;
+        }
+        .back-link:hover {
+            color: var(--accent-hover);
+            background: var(--bg-primary);
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .stat-card {
+            background: var(--bg-secondary);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            border: 2px solid var(--border);
+        }
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 5px;
+        }
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.5;
+                transform: scale(1.2);
+            }
+        }
+        @media (max-width: 768px) {
+            .platform-content {
+                padding: 25px;
+            }
+            .platform-title {
+                font-size: 1.8rem;
+            }
+            .platform-subtitle {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="platform-page">
+        <a href="index.html" class="back-link">← Back to Portfolio</a>
+        
+        <div class="platform-header">
+            <h1 class="platform-title">SCIENTIFIC ANALYTICS ALLIANCE</h1>
+            <p class="platform-subtitle">Premium Research & Wealth Intelligence</p>
+            <div class="platform-meta">
+                <div class="meta-item">
+                    <strong>🌐 Website:</strong>
+                    <a href="https://saa-alliance.com" target="_blank" style="color: white; text-decoration: underline;">saa-alliance.com</a>
+                </div>
+                <div class="meta-item">
+                    <strong>📍 Server:</strong> 104.248.70.69
+                </div>
+                <div class="meta-item">
+                    <strong>🏢 Type:</strong> Institutional-Grade FinTech Platform
+                </div>
+            </div>
+        </div>
+
+        <div class="platform-content">
+            <!-- Executive Summary -->
+            <div class="section-block">
+                <h2>Executive Summary</h2>
+                <p>
+                    <strong>SCIENTIFIC ANALYTICS ALLIANCE (SAA)</strong> is a comprehensive, institutional-grade financial technology and research platform that combines advanced quantitative analytics, artificial intelligence, and academic research to deliver professional-grade solutions for financial institutions, researchers, and sophisticated investors.
+                </p>
+                <p>
+                    The platform represents the culmination of <strong>19+ years of executive banking experience</strong>, academic research, and cutting-edge technology development, positioning it as a direct competitor to industry-leading solutions such as <strong>Bloomberg Terminal, MSCI RiskManager, and Ortec Financial</strong>.
+                </p>
+                <p>
+                    The platform serves as both a research publication hub (hosting <strong>11+ peer-reviewed SSRN publications</strong>) and a production-grade financial technology ecosystem, demonstrating exceptional ability in the fields of quantitative finance, risk management, liquidity infrastructure, and AI-driven financial analytics.
+                </p>
+            </div>
+
+            <!-- Platform Statistics -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value">8+</div>
+                    <div class="stat-label">Production Platforms</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">11+</div>
+                    <div class="stat-label">SSRN Publications</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">700+</div>
+                    <div class="stat-label">Research Views</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">19+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+            </div>
+
+            <!-- Core Platforms -->
+            <div class="section-block">
+                <h2>Core Platform Components</h2>
+                
+                <div class="platform-grid">
+                    <div class="platform-card">
+                        <h4>🌐 Global Risk Intelligence Platform</h4>
+                        <p><strong>Purpose:</strong> Institutional-grade risk analytics platform rivaling Bloomberg Risk, MSCI RiskManager, and Ortec Financial.</p>
+                        <p><strong>Target:</strong> G-SIBs, multinational banks, central banks, insurers, asset managers.</p>
+                        <p><strong>Capabilities:</strong> Advanced VaR/CVaR, stress testing, PCA analysis, 10k-100k Monte Carlo simulations, regulatory compliance tools.</p>
+                    </div>
+
+                    <div class="platform-card">
+                        <h4>🤖 AI Trader</h4>
+                        <p><strong>Purpose:</strong> Institutional-grade algorithmic trading platform for cryptocurrency markets.</p>
+                        <p><strong>Features:</strong> Real-time market data processing, AI-powered analysis, sophisticated risk management, systematic trading capabilities.</p>
+                        <p><strong>Technology:</strong> Python-based engine with ML models for market prediction and automated execution.</p>
+                    </div>
+
+                    <div class="platform-card">
+                        <h4>₿ Crypto Analytics Portal</h4>
+                        <p><strong>Purpose:</strong> Comprehensive digital asset intelligence platform.</p>
+                        <p><strong>Features:</strong> Real-time market data, on-chain metrics, security & regulatory compliance scores, institutional research reports.</p>
+                        <p><strong>Coverage:</strong> 50+ exchanges, blockchain analytics, regulatory scoring.</p>
+                    </div>
+
+                    <div class="platform-card">
+                        <h4>📰 News Analytics Portal</h4>
+                        <p><strong>Purpose:</strong> Bloomberg-style news analysis with AI-powered sentiment tracking.</p>
+                        <p><strong>Coverage:</strong> 20+ sectors, 100+ news sources, multi-language support (EN/RU).</p>
+                        <p><strong>Technology:</strong> GPT-4 and DeepSeek for sentiment analysis, automated digest generation.</p>
+                    </div>
+
+                    <div class="platform-card">
+                        <h4>📊 Investment Dashboard</h4>
+                        <p><strong>Purpose:</strong> Comprehensive stock analysis with technical and fundamental indicators.</p>
+                        <p><strong>Features:</strong> 53 US stocks, SEC EDGAR integration, HTML reports, EN/RU support.</p>
+                        <p><strong>Analysis:</strong> Technical indicators, fundamental metrics, automated report generation.</p>
+                    </div>
+
+                    <div class="platform-card">
+                        <h4>💧 Liquidity Positioner</h4>
+                        <p><strong>Purpose:</strong> Cross-platform personal finance office with AI guidance.</p>
+                        <p><strong>Features:</strong> Portfolio tracking, budgeting, cash-flow forecasts, open banking sync.</p>
+                        <p><strong>Technology:</strong> Flutter framework, AI recommendation engine, financial forecasting.</p>
+                    </div>
+
+                    <div class="platform-card">
+                        <h4>⚖️ Risk Analyzer</h4>
+                        <p><strong>Purpose:</strong> Institutional portfolio risk management platform.</p>
+                        <p><strong>Methods:</strong> VaR/CVaR (Historical, Parametric, MC), stress testing, PCA analysis.</p>
+                        <p><strong>Scale:</strong> 10k-100k Monte Carlo simulations, backtesting & validation.</p>
+                    </div>
+
+                    <div class="platform-card">
+                        <h4>📚 SAA LEARN YOUR WAY</h4>
+                        <p><strong>Purpose:</strong> Premium research & learning intelligence platform.</p>
+                        <p><strong>Features:</strong> Interactive courses, research methodologies, professional training, AI-powered learning.</p>
+                        <p><strong>Integration:</strong> Combines academic research with practical application.</p>
+                    </div>
+                </div>
+                
+                <!-- Development Status -->
+                <div class="development-status" style="margin-top: 40px; padding: 25px; background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%); border-radius: 12px; border-left: 5px solid var(--accent); box-shadow: 0 4px 15px var(--shadow);">
+                    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+                        <div style="width: 12px; height: 12px; background: var(--accent); border-radius: 50%; animation: pulse 2s infinite;"></div>
+                        <h3 style="margin: 0; color: var(--accent); font-size: 1.4rem;">🚀 Development in Progress</h3>
+                    </div>
+                    <p style="margin: 0; color: var(--text-secondary); font-size: 1.05rem; line-height: 1.7;">
+                        <strong>Development continues</strong> — all platforms are under active development and continuously improved. 
+                        We regularly add new features, optimize performance, and expand platform capabilities. 
+                        Follow updates on <a href="https://saa-alliance.com" target="_blank" style="color: var(--accent); text-decoration: underline;">saa-alliance.com</a> and in our <a href="https://github.com/MRsaa1?tab=repositories" target="_blank" style="color: var(--accent); text-decoration: underline;">GitHub repositories</a>.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Academic Research Foundation -->
+            <div class="section-block">
+                <h2>Academic Research Foundation</h2>
+                <div class="highlight-box">
+                    <p><strong>11+ Peer-Reviewed SSRN Publications</strong></p>
+                    <p>Total Views: <strong>700+</strong> | Total Downloads: <strong>150+</strong></p>
+                    <p>Published in multiple SSRN eJournals including:</p>
+                    <ul>
+                        <li>POLITICAL ECONOMY - DEVELOPMENT: FISCAL & MONETARY POLICY eJOURNAL</li>
+                        <li>INSTITUTIONS & TRANSITION ECONOMICS: MACROECONOMIC ISSUES eJOURNAL</li>
+                        <li>Emerging Markets Finance eJournals</li>
+                        <li>Risk Management eJournals</li>
+                        <li>Monetary Policy eJournals</li>
+                    </ul>
+                </div>
+                <h3>Research Areas:</h3>
+                <ul>
+                    <li><strong>Cash Infrastructure & Liquidity Management:</strong> Resilience of Ukraine's Banking Liquidity Infrastructure, Operational Risk and Liquidity Management, Delegated Cash Storage Model</li>
+                    <li><strong>Economic Development & Policy:</strong> Evolution of Economic Thought in Ukraine, Transition to Hybrid Cash Operations, Formation of Investment Potential</li>
+                    <li><strong>Risk Management & Financial Systems:</strong> Centralized Cash Reserve Management, International Management, Free Economic Zones</li>
+                </ul>
+                <p>
+                    The research directly informs the platform's design and implementation. For example, research on liquidity infrastructure led to the Liquidity Positioner platform, research on operational risk informed the Risk Analyzer, and research on cash management influenced Investment Dashboard features.
+                </p>
+            </div>
+
+            <!-- Technical Innovation -->
+            <div class="section-block">
+                <h2>Technical Innovation & AI Integration</h2>
+                <h3>Artificial Intelligence Applications:</h3>
+                <ul>
+                    <li><strong>Market Analysis AI:</strong> Pattern recognition, sentiment analysis, predictive modeling, anomaly detection</li>
+                    <li><strong>Natural Language Processing:</strong> News sentiment analysis (GPT-4, DeepSeek), automated report generation, multi-language processing</li>
+                    <li><strong>Risk Modeling AI:</strong> Machine learning for VaR estimation, stress scenario generation, portfolio optimization</li>
+                    <li><strong>Personal Finance AI:</strong> Personalized financial advice, budget optimization, cash flow forecasting</li>
+                </ul>
+                <h3>Technical Architecture:</h3>
+                <ul>
+                    <li><strong>Microservices Architecture:</strong> Independently deployable components, scalable and maintainable</li>
+                    <li><strong>Real-Time Data Processing:</strong> WebSocket connections, stream processing, event-driven architecture</li>
+                    <li><strong>Security & Compliance:</strong> End-to-end encryption, regulatory compliance frameworks, audit trails</li>
+                </ul>
+            </div>
+
+            <!-- Market Position -->
+            <div class="section-block">
+                <h2>Market Position & Competitive Advantages</h2>
+                <div class="highlight-box">
+                    <p><strong>Direct Competitors:</strong></p>
+                    <ul>
+                        <li>Bloomberg Terminal ($24,000+/year per user)</li>
+                        <li>MSCI RiskManager ($100,000+/year)</li>
+                        <li>Ortec Financial ($50,000+/year)</li>
+                        <li>Refinitiv Eikon ($20,000+/year)</li>
+                    </ul>
+                </div>
+                <h3>SAA's Competitive Advantages:</h3>
+                <ol>
+                    <li><strong>Accessibility:</strong> Modern web-based platform vs. proprietary desktop software</li>
+                    <li><strong>Transparency:</strong> Open methodologies vs. black-box proprietary systems</li>
+                    <li><strong>Integration:</strong> Unified platform vs. multiple separate tools</li>
+                    <li><strong>Cost-Effectiveness:</strong> Fraction of the cost of institutional solutions</li>
+                    <li><strong>Modern Technology:</strong> Built with latest technologies (AI, cloud-native) vs. legacy systems</li>
+                    <li><strong>Research Foundation:</strong> Built on peer-reviewed academic research</li>
+                </ol>
+            </div>
+
+            <!-- Professional Background -->
+            <div class="section-block">
+                <h2>Founder: Professional Background & Expertise</h2>
+                <div class="highlight-box">
+                    <p><strong>Oleksii Slieptsov</strong></p>
+                    <ul>
+                        <li><strong>19+ years</strong> of executive banking experience</li>
+                        <li><strong>Head of Department</strong> at PrivatBank (Ukraine's largest systemically important bank)</li>
+                        <li><strong>Team Leadership:</strong> Managed team of 64 professionals</li>
+                        <li><strong>Operational Scale:</strong> Managed daily turnover of up to UAH 2 billion ($50M equivalent)</li>
+                        <li><strong>Geographic Scope:</strong> Directed nationwide operations across 32 cash centers</li>
+                        <li><strong>Regulatory Interface:</strong> Orchestrated interbank transactions with National Bank of Ukraine</li>
+                    </ul>
+                </div>
+                <h3>Professional Certifications:</h3>
+                <ul>
+                    <li><strong>CFA</strong> (Chartered Financial Analyst) - Since 2025</li>
+                    <li><strong>AFP</strong> (Association for Financial Professionals) - Treasury & Cash Management</li>
+                    <li><strong>DACFP CBDA</strong> (Digital Assets Certified Financial Professional) - Blockchain and Digital Assets</li>
+                    <li><strong>Broker-Dealer Specialist</strong> - Securities Market Specialist</li>
+                    <li><strong>CTP</strong> (Certified Treasury Professional) - In Progress</li>
+                </ul>
+            </div>
+
+            <!-- Platform Impact -->
+            <div class="section-block">
+                <h2>Platform Impact & Achievements</h2>
+                <h3>Quantitative Metrics:</h3>
+                <ul>
+                    <li><strong>Research Impact:</strong> 11+ peer-reviewed SSRN publications, 700+ views, 150+ downloads</li>
+                    <li><strong>Platform Development:</strong> 8+ production-grade financial technology platforms, 20+ GitHub projects</li>
+                    <li><strong>Technical Achievements:</strong> Institutional-grade risk analytics, real-time market data processing, AI-powered analysis tools</li>
+                </ul>
+                <h3>Qualitative Impact:</h3>
+                <ul>
+                    <li><strong>Industry Recognition:</strong> Platform capabilities rival industry-leading solutions (Bloomberg, MSCI)</li>
+                    <li><strong>Innovation:</strong> Combines academic research with practical implementation, integrates cutting-edge AI with traditional finance</li>
+                    <li><strong>Educational Value:</strong> Provides learning platform, combines theory with practice, makes institutional-grade tools accessible</li>
+                </ul>
+            </div>
+
+            <!-- Use Cases -->
+            <div class="section-block">
+                <h2>Use Cases & Applications</h2>
+                <h3>For Financial Institutions:</h3>
+                <ul>
+                    <li>Portfolio risk assessment and monitoring</li>
+                    <li>Regulatory compliance reporting</li>
+                    <li>Algorithmic trading strategy development</li>
+                    <li>Market analysis and research</li>
+                </ul>
+                <h3>For Individual Investors:</h3>
+                <ul>
+                    <li>Budgeting and cash flow management</li>
+                    <li>Investment portfolio tracking</li>
+                    <li>Stock research and analysis</li>
+                    <li>AI-powered financial advice</li>
+                </ul>
+                <h3>For Academic & Research Community:</h3>
+                <ul>
+                    <li>Access to professional-grade analytics tools</li>
+                    <li>Educational resources and training</li>
+                    <li>Integration with academic research</li>
+                    <li>Publication and dissemination tools</li>
+                </ul>
+            </div>
+
+            <!-- Significance Statement -->
+            <div class="section-block">
+                <div class="highlight-box" style="background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%); border-left: 6px solid var(--accent);">
+                    <h3 style="color: var(--accent); margin-top: 0;">Platform Significance</h3>
+                    <p>
+                        <strong>SCIENTIFIC ANALYTICS ALLIANCE (SAA)</strong> represents a unique combination of:
+                    </p>
+                    <ul>
+                        <li><strong>Academic Excellence:</strong> 11+ peer-reviewed research publications</li>
+                        <li><strong>Technical Innovation:</strong> 8+ institutional-grade financial technology platforms</li>
+                        <li><strong>Professional Expertise:</strong> 19+ years of executive banking experience</li>
+                        <li><strong>Industry Impact:</strong> Solutions that rival Bloomberg, MSCI, and Ortec Financial</li>
+                    </ul>
+                    <p>
+                        The platform demonstrates <strong>exceptional ability</strong> in quantitative finance, risk management, AI applications, and financial technology development. It serves as both a research publication hub and a production-grade technology ecosystem, making it a significant contribution to the fields of financial analytics, risk management, and economic research.
+                    </p>
+                    <p>
+                        This work is of <strong>major significance</strong> to the financial technology industry, academic research community, and broader economic development, particularly in emerging markets and institutional finance.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Links -->
+            <div class="section-block">
+                <h2>Platform Access & Documentation</h2>
+                <div class="platform-grid">
+                    <div class="platform-card">
+                        <h4>🌐 Live Platform</h4>
+                        <p><a href="https://saa-alliance.com" target="_blank" style="color: var(--accent);">saa-alliance.com</a></p>
+                    </div>
+                    <div class="platform-card">
+                        <h4>📊 Portfolio Dashboard</h4>
+                        <p><a href="https://mrsaa1.github.io/portfolio-dashboard/" target="_blank" style="color: var(--accent);">View Portfolio</a></p>
+                    </div>
+                    <div class="platform-card">
+                        <h4>📚 SSRN Publications</h4>
+                        <p><a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=7753421" target="_blank" style="color: var(--accent);">View Research</a></p>
+                    </div>
+                    <div class="platform-card">
+                        <h4>💻 GitHub Projects</h4>
+                        <p><a href="https://github.com/MRsaa1?tab=repositories" target="_blank" style="color: var(--accent);">View Code</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Theme Switcher -->
+    <div class="theme-switcher" id="themeSwitcher">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+    </div>
+    
+    <script>
+        // Theme Switcher Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const themeSwitcher = document.getElementById('themeSwitcher');
+            const body = document.body;
+            
+            // Check for saved theme preference or default to light theme
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            
+            // Apply saved theme
+            if (savedTheme === 'dark') {
+                body.classList.add('dark-theme');
+            }
+            
+            // Theme switcher click handler
+            themeSwitcher.addEventListener('click', function() {
+                body.classList.toggle('dark-theme');
+                
+                // Save theme preference
+                const currentTheme = body.classList.contains('dark-theme') ? 'dark' : 'light';
+                localStorage.setItem('theme', currentTheme);
+            });
+        });
+    </script>
+</body>
+</html>
+

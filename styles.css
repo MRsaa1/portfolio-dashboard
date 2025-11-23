@@ -371,6 +371,22 @@ html {
     height: 20px;
 }
 
+.hero-btn-saa {
+    background: linear-gradient(135deg, var(--accent) 0%, #8B6F47 100%);
+    color: #FFFFFF;
+    border: none;
+    box-shadow: 0 4px 15px rgba(203, 161, 53, 0.4);
+    font-weight: 700;
+    font-size: 1.05rem;
+    letter-spacing: 0.5px;
+}
+
+.hero-btn-saa:hover {
+    background: linear-gradient(135deg, var(--accent-hover) 0%, #9B7F57 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(203, 161, 53, 0.5);
+}
+
 .hero-visual {
     display: flex;
     justify-content: center;
