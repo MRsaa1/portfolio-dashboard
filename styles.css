@@ -583,6 +583,39 @@ html {
     border-top: 1px solid var(--border);
 }
 
+/* Status indicators for journal publications */
+.status-indicator {
+    position: absolute;
+    left: 0;
+    top: 6px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.status-published {
+    background-color: #28a745;
+    box-shadow: 0 0 0 2px rgba(40, 167, 69, 0.2);
+}
+
+.status-scheduled {
+    background-color: #dc3545;
+    opacity: 0.7;
+    box-shadow: 0 0 0 2px rgba(220, 53, 69, 0.15);
+}
+
+body.dark-theme .status-published {
+    background-color: #4caf50;
+    box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.3);
+}
+
+body.dark-theme .status-scheduled {
+    background-color: #f44336;
+    opacity: 0.6;
+    box-shadow: 0 0 0 2px rgba(244, 67, 54, 0.2);
+}
+
 .publication-item {
     padding: 25px;
     background-color: var(--bg-primary);
