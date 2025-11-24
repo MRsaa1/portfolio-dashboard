@@ -171,18 +171,29 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
             
-            // Create mailto link (fallback if no backend)
-            const mailtoLink = `mailto:your-email@example.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`)}`;
+            // Send email to info@reservone.consulting
+            // Using mailto: for GitHub Pages (static site)
+            const recipientEmail = 'info@reservone.consulting';
+            const emailSubject = encodeURIComponent(formData.subject || 'Contact Form Message');
+            const emailBody = encodeURIComponent(
+                `Name: ${formData.name}\n` +
+                `Email: ${formData.email}\n` +
+                `Subject: ${formData.subject}\n\n` +
+                `Message:\n${formData.message}`
+            );
             
-            // For production, you would send this to a backend API
-            // For now, we'll use mailto as fallback
+            const mailtoLink = `mailto:${recipientEmail}?subject=${emailSubject}&body=${emailBody}`;
+            
+            // Open email client
             window.location.href = mailtoLink;
             
             // Show success message
-            showFormMessage('Thank you! Your message has been sent. I will get back to you soon.', 'success');
+            showFormMessage('Thank you! Your email client will open. Please send the message to complete the submission.', 'success');
             
-            // Reset form
-            contactForm.reset();
+            // Reset form after a short delay
+            setTimeout(() => {
+                contactForm.reset();
+            }, 2000);
         });
     }
     
