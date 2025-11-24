@@ -568,7 +568,7 @@
                 <h2>Platform Impact & Achievements</h2>
                 <h3>Quantitative Metrics:</h3>
                 <ul>
-                    <li><strong>Research Impact:</strong> 11+ peer-reviewed SSRN publications, 790+ views, 156+ downloads | Author Rank: 466,005 out of 2,483,629</li>
+                    <li><strong>Research Impact:</strong> 11+ peer-reviewed SSRN publications, <span id="ssrn-total-views">790+</span> views, <span id="ssrn-total-downloads">156+</span> downloads | Author Rank: <span id="ssrn-author-rank-saa">466,005 out of 2,483,629</span></li>
                     <li><strong>Platform Development:</strong> 8+ production-grade financial technology platforms, 20+ GitHub projects</li>
                     <li><strong>Technical Achievements:</strong> Institutional-grade risk analytics, real-time market data processing, AI-powered analysis tools</li>
                 </ul>
@@ -1062,6 +1062,50 @@
                     }
                 });
             });
+        });
+        
+        // Load SSRN statistics dynamically
+        async function loadSSRNStats() {
+            try {
+                // Determine the correct path based on environment
+                let statsPath = 'ssrn-stats.json';
+                if (window.location.hostname.includes('github.io')) {
+                    statsPath = '/portfolio-dashboard/ssrn-stats.json';
+                } else if (window.location.hostname.includes('104.248.70.69') || window.location.hostname.includes('saa-alliance.com')) {
+                    statsPath = '/research/ssrn-stats.json';
+                }
+                
+                const response = await fetch(statsPath + '?t=' + Date.now()); // Cache busting
+                if (!response.ok) {
+                    throw new Error('Failed to load statistics');
+                }
+                
+                const stats = await response.json();
+                
+                // Update statistics in SAA section
+                const viewsEl = document.getElementById('ssrn-total-views');
+                const downloadsEl = document.getElementById('ssrn-total-downloads');
+                const rankEl = document.getElementById('ssrn-author-rank-saa');
+                
+                if (viewsEl) {
+                    viewsEl.textContent = stats.totalViews + '+';
+                }
+                if (downloadsEl) {
+                    downloadsEl.textContent = stats.totalDownloads + '+';
+                }
+                if (rankEl) {
+                    rankEl.textContent = `${stats.authorRank} out of ${stats.totalAuthors}`;
+                }
+                
+                console.log('SSRN statistics loaded:', stats);
+            } catch (error) {
+                console.warn('Could not load SSRN statistics, using default values:', error);
+            }
+        }
+        
+        // Load statistics when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            loadSSRNStats();
         });
     </script>
 </body>

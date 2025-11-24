@@ -1340,7 +1340,7 @@
                                 <div class="contact-details">
                                     <h3 class="contact-label">SSRN Author Page</h3>
                                     <a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=7753421" target="_blank" class="contact-value">papers.ssrn.com/author/7753421</a>
-                                    <p style="margin-top: 10px; font-size: 0.9rem; color: var(--text-primary); font-weight: 500;">Author Rank: 466,005 out of 2,483,629</p>
+                                    <p id="ssrn-author-rank" style="margin-top: 10px; font-size: 0.9rem; color: var(--text-primary); font-weight: 500;">Author Rank: 466,005 out of 2,483,629</p>
                                     <p style="margin-top: 5px; font-size: 0.8rem; color: var(--text-secondary);">Author ID: 7753421</p>
                                 </div>
                             </div>
@@ -1451,6 +1451,41 @@
                 })();
             }
         }
+        
+        // Load SSRN statistics dynamically
+        async function loadSSRNStats() {
+            try {
+                // Determine the correct path based on environment
+                let statsPath = 'ssrn-stats.json';
+                if (window.location.hostname.includes('github.io')) {
+                    statsPath = '/portfolio-dashboard/ssrn-stats.json';
+                } else if (window.location.hostname.includes('104.248.70.69') || window.location.hostname.includes('saa-alliance.com')) {
+                    statsPath = '/research/ssrn-stats.json';
+                }
+                
+                const response = await fetch(statsPath + '?t=' + Date.now()); // Cache busting
+                if (!response.ok) {
+                    throw new Error('Failed to load statistics');
+                }
+                
+                const stats = await response.json();
+                
+                // Update Author Rank in Contact section
+                const authorRankEl = document.getElementById('ssrn-author-rank');
+                if (authorRankEl) {
+                    authorRankEl.textContent = `Author Rank: ${stats.authorRank} out of ${stats.totalAuthors}`;
+                }
+                
+                console.log('SSRN statistics loaded:', stats);
+            } catch (error) {
+                console.warn('Could not load SSRN statistics, using default values:', error);
+            }
+        }
+        
+        // Load statistics when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            loadSSRNStats();
+        });
     </script>
 </body>
 </html>
