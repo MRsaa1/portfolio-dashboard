@@ -146,27 +146,34 @@
             const pdfViewLink3 = document.getElementById('pdf-view-link-3');
             const pdfDownloadLink3 = document.getElementById('pdf-download-link-3');
             
+            // PDF 4: Journal ID 2012943
+            const pdfViewLink4 = document.getElementById('pdf-view-link-4');
+            const pdfDownloadLink4 = document.getElementById('pdf-download-link-4');
+            
             // Check if we're on GitHub Pages or server
             const isGitHubPages = window.location.hostname.includes('github.io');
             const isServer = window.location.hostname.includes('104.248.70.69') || window.location.hostname.includes('saa-alliance.com');
             
-            let pdfPath1, pdfPath2, pdfPath3;
+            let pdfPath1, pdfPath2, pdfPath3, pdfPath4;
             
             if (isGitHubPages) {
                 // GitHub Pages: use absolute path
                 pdfPath1 = '/portfolio-dashboard/screenshots/ssrn-5389179-issue-proof-journal-2242108.pdf';
                 pdfPath2 = '/portfolio-dashboard/screenshots/ssrn-5389179-issue-proof-journal-1332723.pdf';
                 pdfPath3 = '/portfolio-dashboard/screenshots/ssrn-5389179-issue-proof-journal-1492283.pdf';
+                pdfPath4 = '/portfolio-dashboard/screenshots/ssrn-5389179-issue-proof-journal-2012943.pdf';
             } else if (isServer) {
                 // Server: use absolute path from research
                 pdfPath1 = '/research/screenshots/ssrn-5389179-issue-proof-journal-2242108.pdf';
                 pdfPath2 = '/research/screenshots/ssrn-5389179-issue-proof-journal-1332723.pdf';
                 pdfPath3 = '/research/screenshots/ssrn-5389179-issue-proof-journal-1492283.pdf';
+                pdfPath4 = '/research/screenshots/ssrn-5389179-issue-proof-journal-2012943.pdf';
             } else {
                 // Local: use relative path
                 pdfPath1 = '../screenshots/ssrn-5389179-issue-proof-journal-2242108.pdf';
                 pdfPath2 = '../screenshots/ssrn-5389179-issue-proof-journal-1332723.pdf';
                 pdfPath3 = '../screenshots/ssrn-5389179-issue-proof-journal-1492283.pdf';
+                pdfPath4 = '../screenshots/ssrn-5389179-issue-proof-journal-2012943.pdf';
             }
             
             // Set links for PDF 1
@@ -185,6 +192,12 @@
             if (pdfViewLink3 && pdfDownloadLink3) {
                 pdfViewLink3.href = pdfPath3;
                 pdfDownloadLink3.href = pdfPath3;
+            }
+            
+            // Set links for PDF 4
+            if (pdfViewLink4 && pdfDownloadLink4) {
+                pdfViewLink4.href = pdfPath4;
+                pdfDownloadLink4.href = pdfPath4;
             }
         });
     </script>
@@ -327,6 +340,47 @@
                         <p style="margin: 0; font-size: 0.85rem; color: var(--text-secondary);">
                             <strong>Issue Proof URL (private):</strong><br>
                             <code style="font-size: 0.8rem; word-break: break-all; display: block; margin-top: 5px; padding: 10px; background: var(--bg-primary); border-radius: 4px;">https://hq.ssrn.com/journals/IssueProof.cfm?abstractid=5389179&journalid=1492283&issue_number=99&volume=16&journal_type=CMBO&function=showissue</code>
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Journal 4: FINANCIAL CRISES -->
+                <div style="background: var(--bg-primary); padding: 20px; border-radius: 6px; margin-bottom: 20px; border-left: 4px solid var(--accent);">
+                    <h4 style="color: var(--text-primary); margin-bottom: 15px; font-size: 1.1rem;">4. FINANCIAL CRISES eJOURNAL</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 15px;">
+                        Vol. 13, Issue 75 | October 9, 2025 | Journal ID: 2012943
+                    </p>
+                    <div id="pdf-container-4" style="text-align: center; padding: 40px 20px; background: var(--bg-secondary); border-radius: 6px;">
+                        <div style="margin-bottom: 20px;">
+                            <h4 style="color: var(--text-primary); margin-bottom: 15px;">SSRN Issue Proof Page (PDF)</h4>
+                            <p style="color: var(--text-secondary); margin-bottom: 20px;">
+                                Click the button below to view or download the PDF version of the Issue Proof page.
+                            </p>
+                        </div>
+                        <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                            <a id="pdf-view-link-4" 
+                               href="#" 
+                               target="_blank" 
+                               style="display: inline-block; padding: 12px 24px; background: var(--accent); color: white; border-radius: 6px; text-decoration: none; font-weight: 500; transition: background 0.3s ease;">
+                                📄 View PDF →
+                            </a>
+                            <a id="pdf-download-link-4" 
+                               href="#" 
+                               download="ssrn-5389179-issue-proof-journal-2012943.pdf"
+                               style="display: inline-block; padding: 12px 24px; background: var(--bg-primary); color: var(--accent); border: 2px solid var(--accent); border-radius: 6px; text-decoration: none; font-weight: 500; transition: all 0.3s ease;">
+                                ⬇️ Download PDF →
+                            </a>
+                        </div>
+                        <div style="margin-top: 20px; padding: 15px; background: var(--bg-primary); border-radius: 6px;">
+                            <p style="margin: 0; font-size: 0.85rem; color: var(--text-secondary);">
+                                <strong>Note:</strong> The PDF file contains the complete Issue Proof page from SSRN, showing the article's publication in the journal.
+                            </p>
+                        </div>
+                    </div>
+                    <div style="margin-top: 15px; padding: 15px; background: var(--bg-secondary); border-radius: 6px;">
+                        <p style="margin: 0; font-size: 0.85rem; color: var(--text-secondary);">
+                            <strong>Issue Proof URL (private):</strong><br>
+                            <code style="font-size: 0.8rem; word-break: break-all; display: block; margin-top: 5px; padding: 10px; background: var(--bg-primary); border-radius: 4px;">https://hq.ssrn.com/journals/IssueProof.cfm?abstractid=5389179&journalid=2012943&issue_number=75&volume=13&journal_type=CMBO&function=showissue</code>
                         </p>
                     </div>
                 </div>
