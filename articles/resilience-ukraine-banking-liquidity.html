@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resilience of Ukraine's Banking Liquidity Infrastructure - Published Article | Oleksii Slieptsov</title>
+    <meta name="description" content="Published article: Resilience of Ukraine's Banking Liquidity Infrastructure: The Impact of Migration Shocks (2013-2023) - Abstract ID: 5627250">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .article-page {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        .article-header {
+            background: var(--bg-secondary);
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border-left: 4px solid var(--accent);
+        }
+        .journal-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 15px;
+        }
+        .journal-meta {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 10px;
+        }
+        .article-content {
+            background: var(--bg-primary);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px var(--shadow);
+        }
+        .article-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+        .article-author {
+            font-size: 1.1rem;
+            color: var(--text-primary);
+            margin-bottom: 10px;
+        }
+        .article-affiliation {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+        .article-meta {
+            background: var(--bg-secondary);
+            padding: 20px;
+            border-radius: 6px;
+            margin-bottom: 30px;
+        }
+        .meta-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid var(--border);
+        }
+        .meta-item:last-child {
+            border-bottom: none;
+        }
+        .meta-label {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+        .meta-value {
+            color: var(--text-secondary);
+        }
+        .screenshot-section {
+            margin-top: 40px;
+            padding: 20px;
+            background: var(--bg-secondary);
+            border-radius: 8px;
+        }
+        .screenshot-placeholder {
+            background: var(--bg-primary);
+            border: 2px dashed var(--border);
+            padding: 40px;
+            text-align: center;
+            border-radius: 6px;
+            color: var(--text-secondary);
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 30px;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        .back-link:hover {
+            color: var(--accent-hover);
+            text-decoration: underline;
+        }
+        .public-note {
+            background: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 20px;
+            border-radius: 6px;
+            margin-top: 30px;
+        }
+        .public-note p {
+            margin: 0;
+            color: #1565c0;
+            font-size: 0.95rem;
+        }
+        @media (max-width: 768px) {
+            .article-content {
+                padding: 20px;
+            }
+            .article-title {
+                font-size: 1.5rem;
+            }
+        }
+        #issue-proof-pdf {
+            min-height: 600px;
+        }
+        @media (max-width: 768px) {
+            #issue-proof-pdf {
+                height: 500px;
+            }
+        }
+    </style>
+    <script>
+        // Set correct PDF path based on environment
+        window.addEventListener('DOMContentLoaded', function() {
+            // PDF 1: Journal ID 2167673 (ECONOMETRIC MODELING: INTERNATIONAL FINANCIAL MARKETS)
+            const pdfViewLink1 = document.getElementById('pdf-view-link-1');
+            const pdfDownloadLink1 = document.getElementById('pdf-download-link-1');
+            
+            // PDF 2: Journal ID 992929 (EUROPEAN ECONOMICS)
+            const pdfViewLink2 = document.getElementById('pdf-view-link-2');
+            const pdfDownloadLink2 = document.getElementById('pdf-download-link-2');
+            
+            // PDF 3: Journal ID 1939263 (ECONOMETRIC MODELING: MACROECONOMICS)
+            const pdfViewLink3 = document.getElementById('pdf-view-link-3');
+            const pdfDownloadLink3 = document.getElementById('pdf-download-link-3');
+            
+            // PDF 4: Journal ID 999204 (POLITICAL INSTITUTIONS: ELECTIONS)
+            const pdfViewLink4 = document.getElementById('pdf-view-link-4');
+            const pdfDownloadLink4 = document.getElementById('pdf-download-link-4');
+            
+            // Check if we're on GitHub Pages or server
+            const isGitHubPages = window.location.hostname.includes('github.io');
+            const isServer = window.location.hostname.includes('104.248.70.69') || window.location.hostname.includes('saa-alliance.com');
+            
+            let pdfPath1, pdfPath2, pdfPath3, pdfPath4;
+            
+            if (isGitHubPages) {
+                // GitHub Pages: use absolute path
+                pdfPath1 = '/portfolio-dashboard/screenshots/ssrn-5627250-issue-proof-journal-2167673.pdf';
+                pdfPath2 = '/portfolio-dashboard/screenshots/ssrn-5627250-issue-proof-journal-992929.pdf';
+                pdfPath3 = '/portfolio-dashboard/screenshots/ssrn-5627250-issue-proof-journal-1939263.pdf';
+                pdfPath4 = '/portfolio-dashboard/screenshots/ssrn-5627250-issue-proof-journal-999204.pdf';
+            } else if (isServer) {
+                // Server: use absolute path from research
+                pdfPath1 = '/research/screenshots/ssrn-5627250-issue-proof-journal-2167673.pdf';
+                pdfPath2 = '/research/screenshots/ssrn-5627250-issue-proof-journal-992929.pdf';
+                pdfPath3 = '/research/screenshots/ssrn-5627250-issue-proof-journal-1939263.pdf';
+                pdfPath4 = '/research/screenshots/ssrn-5627250-issue-proof-journal-999204.pdf';
+            } else {
+                // Local: use relative path
+                pdfPath1 = '../screenshots/ssrn-5627250-issue-proof-journal-2167673.pdf';
+                pdfPath2 = '../screenshots/ssrn-5627250-issue-proof-journal-992929.pdf';
+                pdfPath3 = '../screenshots/ssrn-5627250-issue-proof-journal-1939263.pdf';
+                pdfPath4 = '../screenshots/ssrn-5627250-issue-proof-journal-999204.pdf';
+            }
+            
+            // Set links for PDF 1
+            if (pdfViewLink1 && pdfDownloadLink1) {
+                pdfViewLink1.href = pdfPath1;
+                pdfDownloadLink1.href = pdfPath1;
+            }
+            
+            // Set links for PDF 2
+            if (pdfViewLink2 && pdfDownloadLink2) {
+                pdfViewLink2.href = pdfPath2;
+                pdfDownloadLink2.href = pdfPath2;
+            }
+            
+            // Set links for PDF 3
+            if (pdfViewLink3 && pdfDownloadLink3) {
+                pdfViewLink3.href = pdfPath3;
+                pdfDownloadLink3.href = pdfPath3;
+            }
+            
+            // Set links for PDF 4
+            if (pdfViewLink4 && pdfDownloadLink4) {
+                pdfViewLink4.href = pdfPath4;
+                pdfDownloadLink4.href = pdfPath4;
+            }
+        });
+    </script>
+</head>
+<body>
+    <!-- Theme Switcher -->
+    <div class="theme-switcher" id="themeSwitcher">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+    </div>
+    
+    <div class="article-page">
+        <a href="../index.html#published-articles" class="back-link">← Back to Portfolio</a>
+        
+        <div class="article-content">
+            <h1 class="article-title">Resilience of Ukraine's Banking Liquidity Infrastructure: The Impact of Migration Shocks (2013-2023)</h1>
+            
+            <div class="article-author">
+                <strong>Author:</strong> Oleksii Slieptsov
+            </div>
+            
+            <div class="article-meta">
+                <div class="meta-item">
+                    <span class="meta-label">Abstract ID:</span>
+                    <span class="meta-value">5627250</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Date Posted:</span>
+                    <span class="meta-value">November 18, 2025</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Views:</span>
+                    <span class="meta-value">5</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Downloads:</span>
+                    <span class="meta-value">4</span>
+                </div>
+            </div>
+
+            <!-- Journal Publications Section -->
+            <div class="screenshot-section">
+                <h3 style="color: var(--text-primary); margin-bottom: 20px;">Journal Publications & Issue Proof Pages</h3>
+                
+                <!-- Journal 1: ECONOMETRIC MODELING: INTERNATIONAL FINANCIAL MARKETS -->
+                <div style="background: var(--bg-primary); padding: 20px; border-radius: 6px; margin-bottom: 20px; border-left: 4px solid var(--accent);">
+                    <h4 style="color: var(--text-primary); margin-bottom: 15px; font-size: 1.1rem;">1. ECONOMETRIC MODELING: INTERNATIONAL FINANCIAL MARKETS - VOLATILITY & FINANCIAL CRISES eJOURNAL</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 15px;">
+                        Vol. 14, No. 84 | November 21, 2025 | Journal ID: 2167673
+                    </p>
+                    <div id="pdf-container-1" style="text-align: center; padding: 40px 20px; background: var(--bg-secondary); border-radius: 6px;">
+                        <div style="margin-bottom: 20px;">
+                            <h4 style="color: var(--text-primary); margin-bottom: 15px;">SSRN Issue Proof Page (PDF)</h4>
+                            <p style="color: var(--text-secondary); margin-bottom: 20px;">
+                                Click the button below to view or download the PDF version of the Issue Proof page.
+                            </p>
+                        </div>
+                        <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                            <a id="pdf-view-link-1" 
+                               href="#" 
+                               target="_blank" 
+                               style="display: inline-block; padding: 12px 24px; background: var(--accent); color: white; border-radius: 6px; text-decoration: none; font-weight: 500; transition: background 0.3s ease;">
+                                📄 View PDF →
+                            </a>
+                            <a id="pdf-download-link-1" 
+                               href="#" 
+                               download="ssrn-5627250-issue-proof-journal-2167673.pdf"
+                               style="display: inline-block; padding: 12px 24px; background: var(--bg-primary); color: var(--accent); border: 2px solid var(--accent); border-radius: 6px; text-decoration: none; font-weight: 500; transition: all 0.3s ease;">
+                                ⬇️ Download PDF →
+                            </a>
+                        </div>
+                        <div style="margin-top: 20px; padding: 15px; background: var(--bg-primary); border-radius: 6px;">
+                            <p style="margin: 0; font-size: 0.85rem; color: var(--text-secondary);">
+                                <strong>Note:</strong> The PDF file contains the complete Issue Proof page from SSRN, showing the article's publication in the journal.
+                            </p>
+                        </div>
+                    </div>
+                    <div style="margin-top: 15px; padding: 15px; background: var(--bg-secondary); border-radius: 6px;">
+                        <p style="margin: 0; font-size: 0.85rem; color: var(--text-secondary);">
+                            <strong>Issue Proof URL (private):</strong><br>
+                            <code style="font-size: 0.8rem; word-break: break-all; display: block; margin-top: 5px; padding: 10px; background: var(--bg-primary); border-radius: 4px;">https://hq.ssrn.com/journals/IssueProof.cfm?abstractid=5627250&journalid=2167673&issue_number=84&volume=14&journal_type=CMBO&function=showissue</code>
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Journal 2: EUROPEAN ECONOMICS: MACROECONOMICS & MONETARY ECONOMICS -->
+                <div style="background: var(--bg-primary); padding: 20px; border-radius: 6px; margin-bottom: 20px; border-left: 4px solid var(--accent);">
+                    <h4 style="color: var(--text-primary); margin-bottom: 15px; font-size: 1.1rem;">2. EUROPEAN ECONOMICS: MACROECONOMICS & MONETARY ECONOMICS eJOURNAL</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 15px;">
+                        Vol. 18, No. 147 | November 18, 2025 | Journal ID: 992929
+                    </p>
+                    <p style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 15px; font-style: italic;">
+                        Editors: Marco Da Rin (Tilburg University), Francesco Giavazzi (Bocconi University, NBER, CEPR)
+                    </p>
+                    <div id="pdf-container-2" style="text-align: center; padding: 40px 20px; background: var(--bg-secondary); border-radius: 6px;">
+                        <div style="margin-bottom: 20px;">
+                            <h4 style="color: var(--text-primary); margin-bottom: 15px;">SSRN Issue Proof Page (PDF)</h4>
+                            <p style="color: var(--text-secondary); margin-bottom: 20px;">
+                                Click the button below to view or download the PDF version of the Issue Proof page.
+                            </p>
+                        </div>
+                        <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                            <a id="pdf-view-link-2" 
+                               href="#" 
+                               target="_blank" 
+                               style="display: inline-block; padding: 12px 24px; background: var(--accent); color: white; border-radius: 6px; text-decoration: none; font-weight: 500; transition: background 0.3s ease;">
+                                📄 View PDF →
+                            </a>
+                            <a id="pdf-download-link-2" 
+                               href="#" 
+                               download="ssrn-5627250-issue-proof-journal-992929.pdf"
+                               style="display: inline-block; padding: 12px 24px; background: var(--bg-primary); color: var(--accent); border: 2px solid var(--accent); border-radius: 6px; text-decoration: none; font-weight: 500; transition: all 0.3s ease;">
+                                ⬇️ Download PDF →
+                            </a>
+                        </div>
+                        <div style="margin-top: 20px; padding: 15px; background: var(--bg-primary); border-radius: 6px;">
+                            <p style="margin: 0; font-size: 0.85rem; color: var(--text-secondary);">
+                                <strong>Note:</strong> The PDF file contains the complete Issue Proof page from SSRN, showing the article's publication in the journal.
+                            </p>
+                        </div>
+                    </div>
+                    <div style="margin-top: 15px; padding: 15px; background: var(--bg-secondary); border-radius: 6px;">
+                        <p style="margin: 0; font-size: 0.85rem; color: var(--text-secondary);">
+                            <strong>Issue Proof URL (private):</strong><br>
+                            <code style="font-size: 0.8rem; word-break: break-all; display: block; margin-top: 5px; padding: 10px; background: var(--bg-primary); border-radius: 4px;">https://hq.ssrn.com/journals/IssueProof.cfm?abstractid=5627250&journalid=992929&issue_number=147&volume=18&journal_type=CMBO&function=showissue</code>
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Journal 3: ECONOMETRIC MODELING: MACROECONOMICS -->
+                <div style="background: var(--bg-primary); padding: 20px; border-radius: 6px; margin-bottom: 20px; border-left: 4px solid var(--accent);">
+                    <h4 style="color: var(--text-primary); margin-bottom: 15px; font-size: 1.1rem;">3. ECONOMETRIC MODELING: MACROECONOMICS eJOURNAL</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 15px;">
+                        Vol. 15, No. 216 | November 24, 2025 | Journal ID: 1939263
+                    </p>
+                    <div id="pdf-container-3" style="text-align: center; padding: 40px 20px; background: var(--bg-secondary); border-radius: 6px;">
+                        <div style="margin-bottom: 20px;">
+                            <h4 style="color: var(--text-primary); margin-bottom: 15px;">SSRN Issue Proof Page (PDF)</h4>
+                            <p style="color: var(--text-secondary); margin-bottom: 20px;">
+                                Click the button below to view or download the PDF version of the Issue Proof page.
+                            </p>
+                        </div>
+                        <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                            <a id="pdf-view-link-3" 
+                               href="#" 
+                               target="_blank" 
+                               style="display: inline-block; padding: 12px 24px; background: var(--accent); color: white; border-radius: 6px; text-decoration: none; font-weight: 500; transition: background 0.3s ease;">
+                                📄 View PDF →
+                            </a>
+                            <a id="pdf-download-link-3" 
+                               href="#" 
+                               download="ssrn-5627250-issue-proof-journal-1939263.pdf"
+                               style="display: inline-block; padding: 12px 24px; background: var(--bg-primary); color: var(--accent); border: 2px solid var(--accent); border-radius: 6px; text-decoration: none; font-weight: 500; transition: all 0.3s ease;">
+                                ⬇️ Download PDF →
+                            </a>
+                        </div>
+                        <div style="margin-top: 20px; padding: 15px; background: var(--bg-primary); border-radius: 6px;">
+                            <p style="margin: 0; font-size: 0.85rem; color: var(--text-secondary);">
+                                <strong>Note:</strong> The PDF file contains the complete Issue Proof page from SSRN, showing the article's publication in the journal.
+                            </p>
+                        </div>
+                    </div>
+                    <div style="margin-top: 15px; padding: 15px; background: var(--bg-secondary); border-radius: 6px;">
+                        <p style="margin: 0; font-size: 0.85rem; color: var(--text-secondary);">
+                            <strong>Issue Proof URL (private):</strong><br>
+                            <code style="font-size: 0.8rem; word-break: break-all; display: block; margin-top: 5px; padding: 10px; background: var(--bg-primary); border-radius: 4px;">https://hq.ssrn.com/journals/IssueProof.cfm?abstractid=5627250&journalid=1939263&issue_number=216&volume=15&journal_type=CMBO&function=showissue</code>
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Journal 4: POLITICAL INSTITUTIONS: ELECTIONS -->
+                <div style="background: var(--bg-primary); padding: 20px; border-radius: 6px; margin-bottom: 20px; border-left: 4px solid var(--accent);">
+                    <h4 style="color: var(--text-primary); margin-bottom: 15px; font-size: 1.1rem;">4. POLITICAL INSTITUTIONS: ELECTIONS eJOURNAL</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 15px;">
+                        Vol. 17, No. 67 | November 24, 2025 | Journal ID: 999204
+                    </p>
+                    <p style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 15px; font-style: italic;">
+                        Editor: Gary W. Cox, Professor, Stanford University
+                    </p>
+                    <div id="pdf-container-4" style="text-align: center; padding: 40px 20px; background: var(--bg-secondary); border-radius: 6px;">
+                        <div style="margin-bottom: 20px;">
+                            <h4 style="color: var(--text-primary); margin-bottom: 15px;">SSRN Issue Proof Page (PDF)</h4>
+                            <p style="color: var(--text-secondary); margin-bottom: 20px;">
+                                Click the button below to view or download the PDF version of the Issue Proof page.
+                            </p>
+                        </div>
+                        <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                            <a id="pdf-view-link-4" 
+                               href="#" 
+                               target="_blank" 
+                               style="display: inline-block; padding: 12px 24px; background: var(--accent); color: white; border-radius: 6px; text-decoration: none; font-weight: 500; transition: background 0.3s ease;">
+                                📄 View PDF →
+                            </a>
+                            <a id="pdf-download-link-4" 
+                               href="#" 
+                               download="ssrn-5627250-issue-proof-journal-999204.pdf"
+                               style="display: inline-block; padding: 12px 24px; background: var(--bg-primary); color: var(--accent); border: 2px solid var(--accent); border-radius: 6px; text-decoration: none; font-weight: 500; transition: all 0.3s ease;">
+                                ⬇️ Download PDF →
+                            </a>
+                        </div>
+                        <div style="margin-top: 20px; padding: 15px; background: var(--bg-primary); border-radius: 6px;">
+                            <p style="margin: 0; font-size: 0.85rem; color: var(--text-secondary);">
+                                <strong>Note:</strong> The PDF file contains the complete Issue Proof page from SSRN, showing the article's publication in the journal.
+                            </p>
+                        </div>
+                    </div>
+                    <div style="margin-top: 15px; padding: 15px; background: var(--bg-secondary); border-radius: 6px;">
+                        <p style="margin: 0; font-size: 0.85rem; color: var(--text-secondary);">
+                            <strong>Issue Proof URL (private):</strong><br>
+                            <code style="font-size: 0.8rem; word-break: break-all; display: block; margin-top: 5px; padding: 10px; background: var(--bg-primary); border-radius: 4px;">https://hq.ssrn.com/journals/IssueProof.cfm?abstractid=5627250&journalid=999204&issue_number=67&volume=17&journal_type=CMBO&function=showissue</code>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="public-note">
+                <p>
+                    <strong>Public Access Note:</strong> This page replicates the information from the SSRN Issue Proof page, 
+                    which is only accessible to the author or journal subscribers. This public page is available for verification 
+                    by legal representatives. All information presented here matches the official SSRN publication.
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Theme Switcher Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const themeSwitcher = document.getElementById('themeSwitcher');
+            const body = document.body;
+            
+            // Check for saved theme preference or default to light theme
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            
+            // Apply saved theme
+            if (savedTheme === 'dark') {
+                body.classList.add('dark-theme');
+            }
+            
+            // Theme switcher click handler
+            if (themeSwitcher) {
+                themeSwitcher.addEventListener('click', function() {
+                    body.classList.toggle('dark-theme');
+                    
+                    // Save theme preference
+                    const currentTheme = body.classList.contains('dark-theme') ? 'dark' : 'light';
+                    localStorage.setItem('theme', currentTheme);
+                });
+            }
+        });
+    </script>
+</body>
+</html>
+
