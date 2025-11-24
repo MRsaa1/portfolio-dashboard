@@ -373,7 +373,7 @@
                     <div style="margin-top: 8px; font-size: 0.85rem; color: var(--accent); font-weight: 600;">→ 20+ by 2028</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-value">700+</div>
+                    <div class="stat-value" id="saa-stat-views">790+</div>
                     <div class="stat-label">Research Views</div>
                     <div style="margin-top: 8px; font-size: 0.85rem; color: var(--accent); font-weight: 600;">Growing daily</div>
                 </div>
@@ -465,7 +465,7 @@
                 <h2>Academic Research Foundation</h2>
                 <div class="highlight-box">
                     <p><strong>11+ Peer-Reviewed SSRN Publications</strong></p>
-                    <p>Total Views: <strong>700+</strong> | Total Downloads: <strong>150+</strong></p>
+                    <p>Total Views: <strong id="saa-total-views-text">790+</strong> | Total Downloads: <strong id="saa-total-downloads-text">156+</strong></p>
                     <p>Published in multiple SSRN eJournals including:</p>
                     <ul>
                         <li>POLITICAL ECONOMY - DEVELOPMENT: FISCAL & MONETARY POLICY eJOURNAL</li>
@@ -1086,6 +1086,9 @@
                 const viewsEl = document.getElementById('ssrn-total-views');
                 const downloadsEl = document.getElementById('ssrn-total-downloads');
                 const rankEl = document.getElementById('ssrn-author-rank-saa');
+                const statViewsEl = document.getElementById('saa-stat-views');
+                const totalViewsTextEl = document.getElementById('saa-total-views-text');
+                const totalDownloadsTextEl = document.getElementById('saa-total-downloads-text');
                 
                 if (viewsEl) {
                     viewsEl.textContent = stats.totalViews + '+';
@@ -1095,6 +1098,15 @@
                 }
                 if (rankEl) {
                     rankEl.textContent = `${stats.authorRank} out of ${stats.totalAuthors}`;
+                }
+                if (statViewsEl) {
+                    statViewsEl.textContent = stats.totalViews + '+';
+                }
+                if (totalViewsTextEl) {
+                    totalViewsTextEl.textContent = stats.totalViews + '+';
+                }
+                if (totalDownloadsTextEl) {
+                    totalDownloadsTextEl.textContent = stats.totalDownloads + '+';
                 }
                 
                 console.log('SSRN statistics loaded:', stats);
