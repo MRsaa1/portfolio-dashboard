@@ -1354,7 +1354,7 @@
                                 <div class="contact-details">
                                     <h3 class="contact-label">SSRN Author Page</h3>
                                     <a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=7753421" target="_blank" class="contact-value">papers.ssrn.com/author/7753421</a>
-                                    <p id="ssrn-author-rank" style="margin-top: 10px; font-size: 0.9rem; color: var(--text-primary); font-weight: 500;">Author Rank: 466,005 out of 2,483,629</p>
+                                    <p id="ssrn-author-rank" style="margin-top: 10px; font-size: 0.9rem; color: var(--text-primary); font-weight: 500;">Author Rank is 415,293 out of 2,513,560</p>
                                     <p style="margin-top: 5px; font-size: 0.8rem; color: var(--text-secondary);">Author ID: 7753421</p>
                                 </div>
                             </div>
@@ -1494,7 +1494,7 @@
                 // Update Author Rank in Contact section
                 const authorRankEl = document.getElementById('ssrn-author-rank');
                 if (authorRankEl) {
-                    authorRankEl.textContent = `Author Rank: ${stats.authorRank} out of ${stats.totalAuthors}`;
+                    authorRankEl.textContent = `Author Rank is ${stats.authorRank} out of ${stats.totalAuthors}`;
                 }
                 
                 // Update Impact Metrics
