@@ -171,9 +171,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
             
-            // Send email to info@reservone.consulting
+            // Send email to o.slieptsov@saa-alliance.com
             // Using mailto: for GitHub Pages (static site)
-            const recipientEmail = 'info@reservone.consulting';
+            const recipientEmail = 'o.slieptsov@saa-alliance.com';
             const emailSubject = encodeURIComponent(formData.subject || 'Contact Form Message');
             const emailBody = encodeURIComponent(
                 `Name: ${formData.name}\n` +
