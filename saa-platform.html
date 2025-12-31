@@ -12,6 +12,86 @@
                 grid-template-columns: 1fr !important;
             }
         }
+        
+        /* Print styles for PDF export */
+        @media print {
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            
+            body {
+                background: white !important;
+                color: black !important;
+            }
+            
+            .platform-page {
+                max-width: 100% !important;
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+            
+            .platform-header {
+                background: #CBA135 !important;
+                color: white !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                page-break-inside: avoid;
+            }
+            
+            .section-block {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+            
+            .section-block h2 {
+                page-break-after: avoid;
+                break-after: avoid;
+                color: #CBA135 !important;
+            }
+            
+            .section-block h3 {
+                page-break-after: avoid;
+                break-after: avoid;
+                color: #333 !important;
+            }
+            
+            .section-block p,
+            .section-block li {
+                color: #333 !important;
+            }
+            
+            .highlight-box {
+                background: #f5f5f5 !important;
+                border-left: 4px solid #CBA135 !important;
+                page-break-inside: avoid;
+            }
+            
+            .platform-card {
+                page-break-inside: avoid;
+                break-inside: avoid;
+                border: 1px solid #ddd !important;
+            }
+            
+            .theme-switcher {
+                display: none !important;
+            }
+            
+            a {
+                color: #CBA135 !important;
+                text-decoration: underline !important;
+            }
+            
+            /* Ensure all content is visible */
+            [style*="opacity: 0"] {
+                opacity: 1 !important;
+            }
+            
+            [style*="display: none"]:not(.form-message) {
+                display: block !important;
+            }
+        }
         .platform-page {
             max-width: 1400px;
             margin: 0 auto;
