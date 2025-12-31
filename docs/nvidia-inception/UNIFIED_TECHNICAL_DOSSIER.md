@@ -2617,7 +2617,7 @@ data: [DONE]
 
 **API Key Format:**
 - Starts with `nvapi-`
-- Example: `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`
+- Example: `nvapi-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx` (placeholder - use your actual API key)
 - Keep secure, never commit to repository
 
 #### Official Documentation
